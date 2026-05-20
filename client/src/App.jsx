@@ -4,6 +4,8 @@ import HeroSection from './components/home/HeroSection';
 import MarqueeBar from './components/layout/MarqueeBar';
 import CategoryGrid from './components/home/CategoryGrid';
 import FeaturedProducts from './components/home/FeaturedProducts';
+import AboutStrip from './components/home/AboutStrip';
+import TestimonialsSection from './components/home/TestimonialsSection';
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
       <HeroSection />
       <CategoryGrid />
       <FeaturedProducts />
+      <AboutStrip />
+      <TestimonialsSection />
     </>
   )
 }

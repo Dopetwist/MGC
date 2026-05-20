@@ -7,25 +7,6 @@ function FeaturedProducts() {
   const featuredPieces = [
     {
       id: 1,
-      name: "Elegant Gold Ring",
-      image: "/images/featured-products/elegant-gold-ring.png",
-      karat: "18K",
-      sizeRange: [6, 10],
-      style: "Yellow Gold",
-      firstPrice: 199.99,
-      discountPrice: 149.99
-    },
-    {
-      id: 2,
-      name: "Luxurious Gold Necklace",
-      image: "/images/featured-products/luxurious-gold-necklace.jpg",
-      karat: "24K",
-      inchesRange: [18, 20],
-      style: "Gold Plated",
-      firstPrice: 299.99
-    },
-    {
-      id: 3,
       name: "Stylish Gold Bracelet",
       image: "/images/featured-products/stylish-gold-bracelet.png",
       karat: "18K",
@@ -35,13 +16,32 @@ function FeaturedProducts() {
       discountPrice: 129.99
     },
     {
-      id: 4,
+      id: 2,
       name: "Elegant Gold Earrings",
       image: "/images/featured-products/elegant-gold-earring.png",
       karat: "24K",
       style: "Yellow Gold",
       firstPrice: 179.99,
       discountPrice: 159.99
+    },
+    {
+      id: 3,
+      name: "Luxurious Gold Necklace",
+      image: "/images/featured-products/luxurious-gold-necklace.jpg",
+      karat: "24K",
+      inchesRange: [18, 20],
+      style: "Gold Plated",
+      firstPrice: 299.99
+    },
+    {
+      id: 4,
+      name: "Elegant Gold Ring",
+      image: "/images/featured-products/elegant-gold-ring.png",
+      karat: "18K",
+      sizeRange: [6, 10],
+      style: "Yellow Gold",
+      firstPrice: 199.99,
+      discountPrice: 149.99
     }
   ];
 

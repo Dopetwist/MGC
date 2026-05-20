@@ -262,7 +262,9 @@ section#hero {
 }
 
 #category-grid p.browse,
-#featured-products p.hand-picked {
+#featured-products p.hand-picked,
+#about-strip p.our-story,
+#testimonials p.customers-love {
     font-family: var(--poppins);
     font-size: 0.9rem;
     font-weight: 500;
@@ -393,6 +395,7 @@ section#hero {
 
 .featured-card .featured-details {
     padding: 1rem;
+    border-top: 0.05rem solid var(--sub-text-color);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -447,4 +450,148 @@ section#hero {
 .cart-btn:hover {
     cursor: pointer;
     background: #333;
+}
+
+#about-strip {
+    background: #131313;
+    padding: 5rem 5%;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.about-texts {
+    width: 50%;
+}
+
+.about-texts h1 {
+    font-family: var(--georgia);
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    line-height: 1.3;
+}
+
+.about-texts h1 span {
+    color: var(--gold);
+}
+
+.about-texts p {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    line-height: 1.5;
+}
+
+.about-texts p.about-sub-text {
+    margin: 1rem 0;
+}
+
+.about-inner-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-inner-box {
+    display: flex;
+    gap: 2rem;
+}
+
+.item-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.05rem solid var(--gold);
+    padding: 1rem;
+}
+
+.item-icon {
+    color: var(--gold);
+}
+
+.item-box-texts h2 {
+    font-family: var(--georgia);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.about-images {
+    width: 50%;
+    display: grid;
+}
+
+.figure-box {
+    background: #7777771d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.figure-icon {
+    color: var(--gold);
+    font-size: 3rem;
+}
+
+.figure1 {
+    grid-column: span 2;
+}
+
+#testimonials {
+    background: var(--black);
+    padding: 5rem 5%;
+}
+
+.testimonial-heading {
+    font-family: var(--georgia);
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+.testimonial-heading span {
+    color: var(--gold);
+}
+
+.testimonial-flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.testimonial-box {
+    padding: 2rem 1rem;
+    border: 0.05rem solid var(--sub-text-color);
+}
+
+.testimonial-box p.testimonial-text {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.testimonial-box p.testimonial-name {
+    font-family: var(--poppins);
+    color: var(--gold);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.stars {
+    display: flex;
+    gap: 0.2rem;
+    color: var(--gold);
+}
+
+.client-location {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    font-size: 0.8rem;
 }
