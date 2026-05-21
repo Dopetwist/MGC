@@ -12,6 +12,21 @@ function CategoryGrid() {
 
   return (
     <section id="category-grid">
+      <div className="buy-sell">
+        <h1>We Buy, <span>Sell</span> and Swap Gold</h1>
+        <p>Sales of 18Karat/24Karat Gold</p>
+
+        <ul>
+          <li>Hand Cuban</li>
+          <li>Pendants</li>
+          <li>Neck Cuban</li>
+          <li>Gold Teeth Grills</li>
+          <li>Bracelets</li>
+          <li>Chains</li>
+          <li>Customizing & lots more.</li>
+        </ul>
+      </div>
+
       <p className="explore">Explore our collection of exquisite jewelry.</p>
       <p className="browse">Browse by</p>
 

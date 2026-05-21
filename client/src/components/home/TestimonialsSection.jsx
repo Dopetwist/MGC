@@ -11,7 +11,7 @@ function TestimonialsSection() {
         <div className="testimonial-flex">
           <div className="testimonial-box">
             <p className="stars">★★★★★</p>
-            <p className="testimonial-text">"Received my necklace in premium packaging. The craftsmanship is exquisite. It feels like wearing real heritage, not just jewellery."</p>
+            <p className="testimonial-text">"Misan delivered my necklace in premium packaging. The craftsmanship is exquisite. It feels like wearing real heritage, not just jewellery."</p>
             <p className="testimonial-name">- Adaeze O.</p>
             <p className="client-location">Lagos, Nigeria</p>
           </div>

@@ -10,10 +10,10 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-main-box">
           <h2 className="footer-business-name">Misan Gold Collection</h2>
-          <p className="footer-description">Premium gold jewellery, crafted with precision and passion. Proudly Nigerian, globally inspired.</p>
+          <p className="footer-description">Premium gold jewellery, crafted with precision and passion. <br /> Proudly Nigerian, globally inspired.</p>
 
           <div className="footer-contact-details">
-            <h2>Contact Us:</h2>
+            <p className="footer-contact-us">Contact Us:</p>
             <p><MapPin size={24} className='footer-icon' /> 123 Jewelry Street, Lagos, Nigeria</p>
             <p><Mail size={24} className='footer-icon' /> info@misangoldcollection.com</p>
             <p><Phone size={24} className='footer-icon' /> +234 123 456 7890</p>
