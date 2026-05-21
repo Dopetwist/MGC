@@ -25,39 +25,37 @@ function HeroSection() {
                         <button className="explore-btn">Explore Collection</button>
                         <button className="sell-btn">Sell Your Gold</button>
                     </div>
+
+                    <div id="stats">
+                      <div className="stats-box">
+                        <h2>1,400+</h2>
+                        <p>Pieces Sold</p>
+                      </div>
+                      <div className="stats-box">
+                        <h2>18K–24K</h2>
+                        <p>Pure Gold</p>
+                      </div>
+                      <div className="stats-box">
+                        <h2>5 Yrs</h2>
+                        <p>Trusted by Clients</p>
+                      </div>
+                    </div>
                 </div>
 
                 <div className="gold-image">
                     <div className="gold-image-box">
-                        <figure>
-                          <img src="/path/to/gold.png" alt="Hero Gold Image" />
+                        <figure className="gold-image-figure1">
+                          <img src="/images/hero-mgc.png" alt="Hero Top Image" />
                         </figure>
 
-                        <figure>
-                          <img src="/path/to/gold.png" alt="Hero Gold Image" />
+                        <figure className="gold-image-figure2">
+                          <img src="/images/Pendant1.png" alt="Hero Bottom Image" />
                         </figure>
                     </div>
 
                     <p>Luxury Jewelry</p>
                 </div>
             </div>
-
-            <div className="stats">
-              <div className="stats-box">
-                <h2>1,400+</h2>
-                <p>Pieces Sold</p>
-              </div>
-              <div className="stats-box">
-                <h2>18K–24K</h2>
-                <p>Pure Gold</p>
-              </div>
-              <div className="stats-box">
-                <h2>5 Yrs</h2>
-                <p>Trusted by Clients</p>
-              </div>
-            </div>
-          
-
         </section>
     )
 }

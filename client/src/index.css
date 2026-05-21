@@ -160,8 +160,8 @@ section#hero {
 }
 
 .hero-line {
-    width: 2rem;
-    height: 0.5rem;
+    width: 6rem;
+    height: 0.2rem;
     background: var(--gold);
     margin: 1rem 0;
 }
@@ -171,9 +171,9 @@ section#hero {
     justify-content: space-between;
 }
 
-.hero-texts {
-    width: 60%;
-    border-bottom: 0.08rem solid var(--sub-text-color);
+#hero .hero-texts {
+    width: calc(50% - 2rem);
+    height: fit-content;
 }
 
 .new-collection-container {
@@ -188,12 +188,6 @@ section#hero {
     color: var(--gold);
     text-transform: uppercase;
     letter-spacing: 0.3rem;
-}
-
-.hero-line {
-    width: 6rem;
-    height: 0.2rem;
-    background: var(--gold);
 }
 
 .hero-texts h2 {
@@ -253,29 +247,81 @@ section#hero {
    border-color: transparent;
 }
 
+.gold-image {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 .gold-image p {
-    color: var(--sub-text-color);
-    margin: 1rem 0;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
 }
 
 .gold-image-box {
-    color: var(--text-color);
+    position: relative;
+    width: 550px;
+    height: 550px;
 }
 
-.stats {
-    width: fit-content;
+.gold-image-box figure {
+    position: absolute;
+    margin: 0;
+}
+
+.gold-image-figure1 {
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.gold-image-figure1 img {
+    width: 280px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    display: block;
+}
+
+.gold-image-figure2 {
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.gold-image-box figure img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    display: block;
+    border: 0.1rem solid var(--gold);
+}
+
+#stats {
+    width: 100%;
     display: flex;
     gap: 3rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 0.08rem solid var(--sub-text-color);
 }
 
-.stats-box h2 {
+#stats .stats-box h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.3rem 0;
     color: var(--gold);
     font-family: var(--georgia);
     letter-spacing: 0.1rem;
 }
 
-.stats-box p {
+#stats .stats-box p {
     color: var(--sub-text-color);
     font-family: var(--inter);
     font-size: 0.8rem;
@@ -284,6 +330,43 @@ section#hero {
 #category-grid {
     background: var(--accent-color);
     padding: 5rem 5%;
+}
+
+#category-grid .buy-sell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 0.1rem solid var(--sub-text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#category-grid .buy-sell h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#category-grid .buy-sell h1 span {
+    color: var(--deep-gold);
+}
+
+#category-grid .buy-sell p {
+    font-family: var(--inter);
+    font-size: 1.3rem;
+}
+
+#category-grid .buy-sell ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+#category-grid .buy-sell ul li {
+    font-size: 1.1rem;
+    margin: 1rem;
 }
 
 #category-grid p.explore,
@@ -676,7 +759,8 @@ section#hero {
     gap: 0.5rem;
 }
 
-.footer-contact-details p.follow {
+.footer-contact-details p.follow,
+.footer-contact-details p.footer-contact-us {
     font-size: 1rem;
     color: var(--text-color);
     margin-top: 1.5rem;
