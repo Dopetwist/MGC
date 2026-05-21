@@ -126,7 +126,7 @@ section#hero {
 }
 
 #hero {
-    padding-bottom: 4rem;
+    padding: 3rem 5%;
 }
 
 #hero .mgc-box {
@@ -626,4 +626,130 @@ section#hero {
     font-family: var(--inter);
     color: var(--sub-text-color);
     font-size: 0.8rem;
+}
+
+#footer {
+    background: var(--black);
+    color: var(--text-color);
+    padding: 3rem 8%;
+    border-top: 0.05rem solid var(--sub-text-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-business-name {
+    font-family: var(--georgia);
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-description {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    line-height: 1.5;
+    max-width: 20rem;
+}
+
+.footer-contact-details {
+    margin: 1rem 0;
+}
+
+.footer-contact-details h2 {
+    font-family: var(--inter);
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-contact-details p {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-contact-details p.follow {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+}
+
+.footer-icon {
+    color: var(--gold);
+}
+
+.footer-links {
+    display: flex;
+    gap: 4rem;
+}
+
+.footer-link-box h3 {
+    font-family: var(--georgia);
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-link-box ul {
+    list-style: none;
+}
+
+.footer-link-box ul li {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-link-box ul li:hover {
+    color: var(--gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-icon {
+    transition: box-shadow 0.3s ease;
+    border-radius: 50%;
+}
+
+.social-icon:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem var(--gold);
+}
+
+.copyright-section {
+    margin-top: 2rem;
+    border-top: 0.05rem solid var(--sub-text-color);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-section p,
+.bottom-link {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    font-size: 0.9rem;
+}
+
+.bottom-link {
+    text-decoration: none;
+    color: var(--sub-text-color);
+    transition: color 0.3s ease;
+    margin-left: 1rem;
 }
