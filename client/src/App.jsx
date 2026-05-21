@@ -6,6 +6,7 @@ import CategoryGrid from './components/home/CategoryGrid';
 import FeaturedProducts from './components/home/FeaturedProducts';
 import AboutStrip from './components/home/AboutStrip';
 import TestimonialsSection from './components/home/TestimonialsSection';
+import Footer from './components/layout/Footer';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <FeaturedProducts />
       <AboutStrip />
       <TestimonialsSection />
+      <Footer />
     </>
   )
 }

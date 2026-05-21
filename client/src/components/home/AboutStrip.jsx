@@ -54,13 +54,13 @@ function AboutStrip() {
 
         <div className="about-images">
           <div className="figure-box figure1">
-            <Gem size={40} className="figure-icon" />
+            <Gem size={50} className="figure-icon" />
           </div>
           <div className="figure-box figure2">
-            <Flower size={40} className="figure-icon" />
+            <Flower size={50} className="figure-icon" />
           </div>
           <div className="figure-box figure3">
-            <Zap size={40} className="figure-icon" />
+            <Zap size={50} className="figure-icon" />
           </div>
         </div>
       </div>
