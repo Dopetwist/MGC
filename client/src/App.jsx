@@ -1,27 +1,26 @@
 import { useState } from 'react';
-import Header from './components/layout/Header';
-import HeroSection from './components/home/HeroSection';
-import MarqueeBar from './components/layout/MarqueeBar';
-import CategoryGrid from './components/home/CategoryGrid';
-import FeaturedProducts from './components/home/FeaturedProducts';
-import AboutStrip from './components/home/AboutStrip';
-import TestimonialsSection from './components/home/TestimonialsSection';
-import Footer from './components/layout/Footer';
+import { Routes, Route } from "react-router";
+import HomePage from './pages/HomePage';
+import Layout from './components/layout/Layout';
+import CollectionsPage from './pages/CollectionsPage';
+import ShopPage from './pages/ShopPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <MarqueeBar />
-      <HeroSection />
-      <CategoryGrid />
-      <FeaturedProducts />
-      <AboutStrip />
-      <TestimonialsSection />
-      <Footer />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+
+      <Route element={<Layout />}>
+        <Route path="/collections" element={<CollectionsPage />} />
+        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;

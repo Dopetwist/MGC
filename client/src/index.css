@@ -837,3 +837,122 @@ section#hero {
     transition: color 0.3s ease;
     margin-left: 1rem;
 }
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 0.05rem solid var(--sub-text-color);
+    padding: 2rem 4rem;
+}
+
+.sidebar-home-link {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-filter-text {
+    font-family: var(--inter);
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.sidebar-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-contents .category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-contents .category .sidebar-item,
+.sidebar-contents .gold-purity .gold-purity-sub-text,
+.sidebar-contents .price-range .price-range-sub-text,
+.sidebar-contents .availability .availability-sub-text {
+    font-family: var(--inter);
+    color: #555;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.sidebar-contents .category p,
+.sidebar-contents .gold-purity-text,
+.sidebar-contents .price-range-text,
+.sidebar-contents .availability-text {
+    font-family: var(--inter);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.gold-purity-text, 
+.price-range-text, 
+.availability-text {
+    margin: 0.5rem 0;
+}
+
+.gold-purity-sub-text,
+.price-range-sub-text,
+.availability-sub-text {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.sidebar-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-btns button {
+    font-family: var(--inter);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-btns button:hover {
+    background: #eabb38;
+    cursor: pointer;
+}
+
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort select {
+    border: 0.1rem solid var(--sub-text-color);
+    border-radius: 0.3rem;
+    background: transparent;
+    padding: 0.3rem;
+    font-family: var(--inter);
+    font-size: 0.9rem;
+}
+
+.sort select:hover {
+    cursor: pointer;
+}
