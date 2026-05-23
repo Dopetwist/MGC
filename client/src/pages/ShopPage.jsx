@@ -1,5 +1,7 @@
+import ProductGrid from "../components/shop/ProductGrid";
 
-function ShopPage() {
+
+function ShopPage({ filteredProducts }) { 
     
   return (
 
@@ -18,7 +20,7 @@ function ShopPage() {
         </div>
 
         <div className="shop-content">
-          {/* Shop content goes here */}
+          <ProductGrid products={filteredProducts} columns={4} />
         </div>
       </div>
 

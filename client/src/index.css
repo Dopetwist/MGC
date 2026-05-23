@@ -12,6 +12,7 @@
     --black: #0D0D0D;
     --gold: #c79f33;
     --deep-gold: #a07d28;
+    --nav-gold: #c7a853;
     --accent-color: #EDEDED;
     --text-color: #fff;
     --sub-text-color: #9d9ea4;
@@ -51,6 +52,10 @@ header {
 
 #navbar .link:hover {
     cursor: pointer;
+}
+
+#navbar .link.active {
+    color: var(--nav-gold);
 }
 
 #nav-right {
@@ -476,6 +481,10 @@ section#hero {
     font-size: 0.8rem;
 }
 
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
 #featured-products {
     padding: 5rem 5%;
 }
@@ -847,8 +856,11 @@ section#hero {
 
 .sidebar-home-link {
     font-family: var(--inter);
-    color: var(--sub-text-color);
+    color: var(--black);
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
     letter-spacing: 0.1rem;
     margin-bottom: 1rem;
@@ -875,6 +887,15 @@ section#hero {
     gap: 0.5rem;
 }
 
+.sidebar-item,
+.gold-purity-sub-text,
+.availability-sub-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
 .sidebar-contents .category .sidebar-item,
 .sidebar-contents .gold-purity .gold-purity-sub-text,
 .sidebar-contents .price-range .price-range-sub-text,
@@ -885,7 +906,7 @@ section#hero {
     text-decoration: none;
 }
 
-.sidebar-contents .category p,
+.sidebar-contents .category p.category-head-text,
 .sidebar-contents .gold-purity-text,
 .sidebar-contents .price-range-text,
 .sidebar-contents .availability-text {
@@ -908,12 +929,7 @@ section#hero {
     margin: 0.5rem 0;
 }
 
-.sidebar-btns {
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-btns button {
+.sidebar-btn button {
     font-family: var(--inter);
     font-size: 0.9rem;
     font-weight: 500;
@@ -926,7 +942,7 @@ section#hero {
     transition: background-color 0.3s ease;
 }
 
-.sidebar-btns button:hover {
+.sidebar-btn button:hover {
     background: #eabb38;
     cursor: pointer;
 }
@@ -955,4 +971,73 @@ section#hero {
 
 .sort select:hover {
     cursor: pointer;
+}
+
+#collections-page {
+    padding: 3rem 5%;
+}
+
+#collections-page .collection-item {
+    background: #ededed66;
+}
+
+#collections-page .collections-home {
+    font-family: var(--inter);
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--black);
+}
+
+.collections-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.collection-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 1rem;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.collection-item h3 {
+    font-family: var(--georgia);
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.collection-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.collection-star {
+    color: var(--gold);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.05rem;
+    margin-top: 0.5rem;
+}
+
+.reviews {
+    font-family: var(--inter);
+    color: var(--black);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+#shop-page {
+    padding: 3rem 5%;
 }
