@@ -12,6 +12,7 @@
     --black: #0D0D0D;
     --gold: #c79f33;
     --deep-gold: #a07d28;
+    --nav-gold: #c7a853;
     --accent-color: #EDEDED;
     --text-color: #fff;
     --sub-text-color: #9d9ea4;
@@ -51,6 +52,10 @@ header {
 
 #navbar .link:hover {
     cursor: pointer;
+}
+
+#navbar .link.active {
+    color: var(--nav-gold);
 }
 
 #nav-right {
