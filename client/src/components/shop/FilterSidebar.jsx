@@ -41,6 +41,11 @@ function FilterSidebar({ filters, setFilters, allProducts }) {
         "Earrings"
     ];
 
+    const purities = [
+        "22K Gold",
+        "18K Gold"
+    ];
+
 
     return (
 
@@ -76,8 +81,20 @@ function FilterSidebar({ filters, setFilters, allProducts }) {
                 <div className="gold-purity">
                     <p className="gold-purity-text">Gold Purity</p>
 
-                    <p className="gold-purity-sub-text"><Square size={16} /> 24K Pure Gold</p>
-                    <p className="gold-purity-sub-text"><Square size={16} /> 18K Gold</p>
+                    {purities.map((purity) => (
+                        <p 
+                        key={purity}
+                        className="gold-purity-sub-text"
+                        onClick={() => toggleFilter("purity", purity)}
+                        >
+                            {isSelected("purity", purity) ? (
+                                <SquareCheck className="square-check" fill="var(--gold)" color="var(--gold)" size={16} />
+                            ) : (
+                                <Square size={16} />
+                            )}
+                            {purity}
+                        </p>
+                    ))}
                 </div>
 
                 <div className="price-range">
@@ -87,8 +104,18 @@ function FilterSidebar({ filters, setFilters, allProducts }) {
 
                 <div className="availability">
                     <p className="availability-text">Availability</p>
-                    <p className="availability-sub-text"><Square size={16} /> In Stock</p>
-                    <p className="availability-sub-text"><Square size={16} /> Made to Order</p>
+                    <p 
+                    className="availability-sub-text"
+                    onClick={() => toggleFilter("availability", "In Stock")}
+                    >
+                        {isSelected("availability", "In Stock") ? (
+                            <SquareCheck className="square-check" fill="var(--gold)" color="var(--gold)" size={16} />
+                        ) : (
+                            <Square size={16} />
+                        )}
+
+                        In Stock
+                    </p>
                 </div>
 
                 <div className="sidebar-btn">

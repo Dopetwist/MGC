@@ -49,7 +49,7 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
   }
 
   if (!Array.isArray(products) || products.length === 0) {
-    return <div>No products found.</div>
+    return <div className="no-products">No products found.</div>
   }
 
   return (
