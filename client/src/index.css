@@ -868,8 +868,11 @@ section#hero {
 
 .sidebar-filter-text {
     font-family: var(--inter);
+    font-weight: 500;
     color: var(--gold);
     font-size: 0.8rem;
+    border-bottom: 0.1rem solid var(--gold);
+    padding-bottom: 1rem;
     letter-spacing: 0.2rem;
     margin: 1rem 0;
     text-transform: uppercase;
@@ -885,6 +888,14 @@ section#hero {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.sidebar-item,
+.gold-purity-sub-text,
+.availability-sub-text {
+    width: fit-content;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .sidebar-item,
@@ -1040,4 +1051,22 @@ section#hero {
 
 #shop-page {
     padding: 3rem 5%;
+}
+
+.no-products {
+    font-family: var(--inter);
+    color: var(--sub-text-color);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+p.purity {
+    font-family: var(--inter);
+    color: var(--deep-gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
 }
