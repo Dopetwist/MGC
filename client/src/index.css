@@ -893,6 +893,14 @@ section#hero {
 .sidebar-item,
 .gold-purity-sub-text,
 .availability-sub-text {
+    width: fit-content;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar-item,
+.gold-purity-sub-text,
+.availability-sub-text {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1051,4 +1059,14 @@ section#hero {
     font-size: 1.2rem;
     text-align: center;
     margin-top: 5rem;
+}
+
+p.purity {
+    font-family: var(--inter);
+    color: var(--deep-gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
 }

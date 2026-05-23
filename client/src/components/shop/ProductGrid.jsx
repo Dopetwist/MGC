@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 import PropTypes from 'prop-types';
 
 /**
@@ -11,6 +12,9 @@ import PropTypes from 'prop-types';
  */
 
 const ProductGrid = ({ products, columns, onAddToCart }) => {
+
+  const location = useLocation();
+
   const gridStyle = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
@@ -59,15 +63,22 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
           {p.image && <img src={p.image} alt={p.name || 'product image'} style={imgStyle} />}
           <div style={titleStyle}>{p.name}</div>
           {p.description && <div style={descStyle}>{truncate(p.description, 120)}</div>}
-          
-          <div className="rating">
-            {[...Array(5)].map((_, i) => (
+
+          {location.pathname === "/shop" && p.purity && (
+            <p className="purity">{p.purity}</p>
+          )}
+
+          {location.pathname === '/collections' && (
+            <div className="rating">
+              {[...Array(5)].map((_, i) => (
                 <span key={i} className="collection-star">
-                    {i < p.rating ? "★" : "☆"}
+                  {i < p.rating ? "★" : "☆"}
                 </span>
-            ))}
-            <p className="reviews">({p.reviews} reviews)</p>
-          </div>
+              ))}
+              
+              <p className="reviews">({p.reviews} reviews)</p>
+            </div>
+          )}
 
           <div style={footerStyle}>
             <div style={priceStyle}>{formatPrice(p.price)}</div>
