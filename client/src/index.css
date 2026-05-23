@@ -476,6 +476,10 @@ section#hero {
     font-size: 0.8rem;
 }
 
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
 #featured-products {
     padding: 5rem 5%;
 }
@@ -955,4 +959,68 @@ section#hero {
 
 .sort select:hover {
     cursor: pointer;
+}
+
+#collections-page {
+    padding: 3rem 5%;
+}
+
+#collections-page .collection-item {
+    background: #ededed66;
+}
+
+#collections-page .collections-home {
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--black);
+}
+
+.collections-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.collection-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 1rem;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.collection-item h3 {
+    font-family: var(--georgia);
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.collection-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.collection-star {
+    color: var(--gold);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.05rem;
+    margin-top: 0.5rem;
+}
+
+.reviews {
+    font-family: var(--inter);
+    color: var(--black);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
 }

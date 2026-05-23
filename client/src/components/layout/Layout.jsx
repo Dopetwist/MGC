@@ -2,7 +2,7 @@ import { useLocation } from "react-router";
 import { Outlet } from "react-router";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
-import Sidebar from "../layout/Sidebar";
+import FilterSidebar from "../shop/FilterSidebar";
 
 function Layout() {
 
@@ -14,7 +14,7 @@ function Layout() {
         <Header />
 
         <div className="layout-content" style={{ display: "flex" }}>
-          {location.pathname === "/shop" && <Sidebar />}
+          {location.pathname === "/shop" && <FilterSidebar />}
 
           <main style={{ flex: 1 }}>
             <Outlet />
