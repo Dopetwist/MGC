@@ -856,8 +856,11 @@ section#hero {
 
 .sidebar-home-link {
     font-family: var(--inter);
-    color: var(--sub-text-color);
+    color: var(--black);
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
     letter-spacing: 0.1rem;
     margin-bottom: 1rem;
@@ -884,6 +887,15 @@ section#hero {
     gap: 0.5rem;
 }
 
+.sidebar-item,
+.gold-purity-sub-text,
+.availability-sub-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
 .sidebar-contents .category .sidebar-item,
 .sidebar-contents .gold-purity .gold-purity-sub-text,
 .sidebar-contents .price-range .price-range-sub-text,
@@ -894,7 +906,7 @@ section#hero {
     text-decoration: none;
 }
 
-.sidebar-contents .category p,
+.sidebar-contents .category p.category-head-text,
 .sidebar-contents .gold-purity-text,
 .sidebar-contents .price-range-text,
 .sidebar-contents .availability-text {
@@ -917,12 +929,7 @@ section#hero {
     margin: 0.5rem 0;
 }
 
-.sidebar-btns {
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-btns button {
+.sidebar-btn button {
     font-family: var(--inter);
     font-size: 0.9rem;
     font-weight: 500;
@@ -935,7 +942,7 @@ section#hero {
     transition: background-color 0.3s ease;
 }
 
-.sidebar-btns button:hover {
+.sidebar-btn button:hover {
     background: #eabb38;
     cursor: pointer;
 }
@@ -975,7 +982,8 @@ section#hero {
 }
 
 #collections-page .collections-home {
-    font-size: 1.1rem;
+    font-family: var(--inter);
+    font-size: 1rem;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -1028,4 +1036,8 @@ section#hero {
     color: var(--black);
     font-size: 0.8rem;
     margin-left: 0.5rem;
+}
+
+#shop-page {
+    padding: 3rem 5%;
 }

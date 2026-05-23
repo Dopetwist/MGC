@@ -40,7 +40,7 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
   const footerStyle = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 12 }
   const priceStyle = { fontWeight: 700 }
   const btnStyle = {
-    background: '#0065d2',
+    background: '#0D0D0D',
     color: '#fff',
     border: 'none',
     padding: '8px 12px',
@@ -59,6 +59,7 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
           {p.image && <img src={p.image} alt={p.name || 'product image'} style={imgStyle} />}
           <div style={titleStyle}>{p.name}</div>
           {p.description && <div style={descStyle}>{truncate(p.description, 120)}</div>}
+          
           <div className="rating">
             {[...Array(5)].map((_, i) => (
                 <span key={i} className="collection-star">
@@ -67,6 +68,7 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
             ))}
             <p className="reviews">({p.reviews} reviews)</p>
           </div>
+
           <div style={footerStyle}>
             <div style={priceStyle}>{formatPrice(p.price)}</div>
             <button
