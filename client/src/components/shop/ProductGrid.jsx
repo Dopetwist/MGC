@@ -33,8 +33,8 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
 
   const imgStyle = {
     width: '100%',
-    height: 160,
-    objectFit: 'cover',
+    height: 200,
+    objectFit: 'contain',
     borderRadius: 6,
     marginBottom: 8,
   }
