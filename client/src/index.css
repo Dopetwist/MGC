@@ -892,7 +892,8 @@ section#hero {
 
 .sidebar-item,
 .gold-purity-sub-text,
-.availability-sub-text {
+.availability-sub-text,
+.price-range-filters form label {
     width: fit-content;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -907,10 +908,26 @@ section#hero {
     text-decoration: none;
 }
 
+.price-range-filters form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.price-range-filters form div {
+    display: flex;
+    align-items: center;
+}
+
+.price-range-filters form input[type="radio"] {
+    margin-right: 0.5rem;   
+}
+
 .sidebar-contents .category .sidebar-item,
 .sidebar-contents .gold-purity .gold-purity-sub-text,
 .sidebar-contents .price-range .price-range-sub-text,
-.sidebar-contents .availability .availability-sub-text {
+.sidebar-contents .availability .availability-sub-text,
+.price-range-filters form label {
     font-family: var(--inter);
     color: #555;
     font-size: 0.9rem;
