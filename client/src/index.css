@@ -892,7 +892,8 @@ section#hero {
 
 .sidebar-item,
 .gold-purity-sub-text,
-.availability-sub-text {
+.availability-sub-text,
+.price-range-filters form label {
     width: fit-content;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -907,10 +908,26 @@ section#hero {
     text-decoration: none;
 }
 
+.price-range-filters form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.price-range-filters form div {
+    display: flex;
+    align-items: center;
+}
+
+.price-range-filters form input[type="radio"] {
+    margin-right: 0.5rem;   
+}
+
 .sidebar-contents .category .sidebar-item,
 .sidebar-contents .gold-purity .gold-purity-sub-text,
 .sidebar-contents .price-range .price-range-sub-text,
-.sidebar-contents .availability .availability-sub-text {
+.sidebar-contents .availability .availability-sub-text,
+.price-range-filters form label {
     font-family: var(--inter);
     color: #555;
     font-size: 0.9rem;
@@ -1026,9 +1043,11 @@ section#hero {
 }
 
 .collection-header {
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .collection-star {
@@ -1069,4 +1088,42 @@ p.purity {
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     margin-top: 1rem;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.pagination-controls button {
+    font-family: var(--inter);
+    color: var(--black);
+    border: 0.1rem solid var(--sub-text-color);
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+    background: var(--gold);
+    color: var(--black);
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+    background: transparent;
+    color: var(--sub-text-color);
+    border-color: var(--sub-text-color);
+    cursor: not-allowed;
+}
+
+.pagination-btn.active {
+    background: #c79f33ac;
+    color: var(--black);
+    border-color: transparent;
 }

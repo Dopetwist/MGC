@@ -50,7 +50,7 @@ function App() {
 
       <Route element={<Layout filters={filters} setFilters={setFilters} allProducts={allProducts} />}>
         <Route path="/collections" element={<CollectionsPage />} />
-        <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
+        <Route path="/shop" element={<ShopPage allProducts={allProducts} filteredProducts={filteredProducts} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Route>

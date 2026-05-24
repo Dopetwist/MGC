@@ -99,7 +99,29 @@ function FilterSidebar({ filters, setFilters, allProducts }) {
 
                 <div className="price-range">
                     <p className="price-range-text">Price Range</p>
-                    <p className="price-range-sub-text">N50,000 - N700,000</p>
+                    <div className="price-range-filters">
+                        <form>
+                            <div>
+                                <input type="radio" name="price" id="range1" />
+                                <label htmlFor="range1">N - N100,000</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="price" id="range2" />
+                                <label htmlFor="range2">N100,000 - N500,000</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="price" id="range3" />
+                                <label htmlFor="range3">N500,000 - N1,000,000</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="price" id="range4" />
+                                <label htmlFor="range4">N1,000,000+</label>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <div className="availability">

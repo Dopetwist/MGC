@@ -3,25 +3,49 @@ import ProductGrid from "../components/shop/ProductGrid";
 
 
 function ShopPage({ filteredProducts }) { 
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8;
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const [ sortOption, setSortOption ] = useState("newest");
+
+
+  // Sort products based on selected option
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortOption === "low-high") {
+      return a.price - b.price;
+    }
+
+    if (sortOption === "high-low") {
+      return b.price - a.price;
+    }
+
+    if (sortOption === "newest") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    }
+
+    return 0;
+  });
 
   // Reset to page 1 when filtered products change
   useEffect(() => {
     setCurrentPage(1);
-  }, [filteredProducts]);
+  }, [filteredProducts, sortOption]);
+
+  const productsPerPage = 8;
 
   // Calculate total pages
-  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
 
   // Get products for current page
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
-  const currentProducts = filteredProducts.slice(startIndex, endIndex);
+  const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
   // Handle page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+    handleScrollToTop();
+  };
+
+  const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
     
@@ -35,10 +59,13 @@ function ShopPage({ filteredProducts }) {
           </p>
           <div className="sort">
             <p>Sort by:</p>
-            <select>
+            <select 
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+            >
               <option value="newest">Newest</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
+              <option value="low-high">Price: Low to High</option>
+              <option value="high-low">Price: High to Low</option>
             </select>
           </div>
         </div>
@@ -50,7 +77,7 @@ function ShopPage({ filteredProducts }) {
         {totalPages > 1 && (
           <div className="pagination-controls">
             <button 
-              onClick={() => handlePageChange(currentPage - 1)}
+              onClick={() => {handlePageChange(currentPage - 1); handleScrollToTop();}}
               disabled={currentPage === 1}
               className="pagination-btn prev-btn"
             >
@@ -60,7 +87,7 @@ function ShopPage({ filteredProducts }) {
             {[...Array(totalPages)].map((_, index) => (
               <button
                 key={index + 1}
-                onClick={() => handlePageChange(index + 1)}
+                onClick={() => {handlePageChange(index + 1); handleScrollToTop();}}
                 className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
               >
                 {index + 1}
@@ -68,7 +95,7 @@ function ShopPage({ filteredProducts }) {
             ))}
             
             <button 
-              onClick={() => handlePageChange(currentPage + 1)}
+              onClick={() => {handlePageChange(currentPage + 1); handleScrollToTop();}}
               disabled={currentPage === totalPages}
               className="pagination-btn next-btn"
             >
