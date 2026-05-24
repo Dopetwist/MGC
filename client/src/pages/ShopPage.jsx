@@ -2,14 +2,35 @@ import { useState, useEffect } from 'react';
 import ProductGrid from "../components/shop/ProductGrid";
 
 
-function ShopPage({ filteredProducts }) { 
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8;
+function ShopPage({ allProducts, filteredProducts }) { 
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const [ sortOption, setSortOption ] = useState("newest");
+  const [ isSorted, setIsSorted ] = useState(false);
+
+
+  // Sort products based on selected option
+  const sortedProducts = [...allProducts].sort((a, b) => {
+    if (sortOption === "low-high") {
+      return a.price - b.price;
+    }
+
+    if (sortOption === "high-low") {
+      return b.price - a.price;
+    }
+
+    if (sortOption === "newest") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    }
+
+    return 0;
+  });
 
   // Reset to page 1 when filtered products change
   useEffect(() => {
     setCurrentPage(1);
   }, [filteredProducts]);
+
+  const productsPerPage = 8;
 
   // Calculate total pages
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -35,16 +56,19 @@ function ShopPage({ filteredProducts }) {
           </p>
           <div className="sort">
             <p>Sort by:</p>
-            <select>
+            <select 
+            value={sortOption} 
+            onChange={(e) => { setSortOption(e.target.value); setIsSorted(true); }}
+            >
               <option value="newest">Newest</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
+              <option value="low-high">Price: Low to High</option>
+              <option value="high-low">Price: High to Low</option>
             </select>
           </div>
         </div>
 
         <div className="shop-content">
-          <ProductGrid products={currentProducts} columns={4} />
+          <ProductGrid products={isSorted ? sortedProducts : currentProducts} columns={4} />
         </div>
 
         {totalPages > 1 && (
