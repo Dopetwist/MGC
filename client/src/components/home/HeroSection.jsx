@@ -32,7 +32,7 @@ function HeroSection() {
                         <p>Pieces Sold</p>
                       </div>
                       <div className="stats-box">
-                        <h2>18K–24K</h2>
+                        <h2>18K–22K</h2>
                         <p>Pure Gold</p>
                       </div>
                       <div className="stats-box">
