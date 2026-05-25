@@ -16,6 +16,7 @@
     --accent-color: #EDEDED;
     --text-color: #fff;
     --sub-text-color: #9d9ea4;
+    --cream: #F5F0E8;
     --poppins: "Poppins", sans-serif;
     --inter: "Inter", sans-serif;
     --georgia: "Georgia", serif;
@@ -1006,7 +1007,7 @@ section#hero {
 }
 
 #collections-page .collection-item {
-    background: #ededed66;
+    background: var(--cream);
 }
 
 #collections-page .collections-home {
@@ -1126,4 +1127,195 @@ p.purity {
     background: #c79f33ac;
     color: var(--black);
     border-color: transparent;
+}
+
+#cart-page {
+    background: var(--cream);
+}
+
+.cart-container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-count-box {
+    width: 1.1rem;
+    height: 1.1rem;
+    font-family: var(--inter);
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: var(--gold);
+    color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.3rem;
+    right: -0.3rem;
+    z-index: 100;
+}
+
+.cart-main {
+    width: 100%;
+    display: flex;
+}
+
+.cart-items {
+    width: calc(100% - 50%);
+    padding: 2rem 1rem;
+}
+
+.cart-items-buttons {
+    margin-top: 1rem;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-items-buttons button {
+    font-weight: 600;
+    font-family: var(--georgia);
+    background: transparent;
+    color: var(--deep-gold);
+    border: 0.1rem solid var(--deep-gold);
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: .2s ease;
+}
+
+.cart-items-buttons button:hover {
+    cursor: pointer;
+    background: var(--gold);
+    color: var(--black);
+    border-color: transparent;
+}
+
+.cart-header {
+    margin-bottom: 2rem;
+}
+
+.cart-box {
+    background: var(--text-color);
+    padding: 2rem;
+}
+
+.cart-icons-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 2rem;
+    border-top: 0.07rem solid var(--sub-text-color);
+}
+
+.cart-icons-box p {
+    font-family: var(--inter);
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.cart-icons-box div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cart-icon {
+    color: var(--deep-gold);
+}
+
+.back-to-shop {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.order-summary {
+    width: 50%;
+    background: var(--text-color);
+    padding: 2rem;
+}
+
+.order-text {
+    font-family: var(--inter);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.order-left-text {
+    color: #555;
+}
+
+.summary-stats {
+    font-family: var(--inter);
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    padding: 2rem 0;
+    border-top: 0.07rem solid var(--sub-text-color);
+    border-bottom: 0.07rem solid var(--sub-text-color);
+}
+
+.cart-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtotal {
+    margin-bottom: 1rem;
+}
+
+.total p {
+    font-family: var(--inter);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.action-buttons {
+    width: 100%;
+    display: flex;
+    margin-top: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button.proceed-checkout {
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: var(--georgia);
+    font-weight: 600;
+    background: var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: .2s ease;
+}
+
+button.proceed-checkout:hover {
+    cursor: pointer;
+    background: var(--deep-gold);
+}
+
+.continue-shopping {
+    font-family: var(--inter);
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }

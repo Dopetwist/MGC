@@ -14,7 +14,7 @@ function CategoryGrid() {
     <section id="category-grid">
       <div className="buy-sell">
         <h1>We Buy, <span>Sell</span> and Swap Gold</h1>
-        <p>Sales of 18Karat/24Karat Gold</p>
+        <p>Sales of 18Karat/22Karat Gold</p>
 
         <ul>
           <li>Hand Cuban</li>

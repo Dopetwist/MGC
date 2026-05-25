@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { Square, SquareCheck, MoveLeft } from "lucide-react";
 
-function FilterSidebar({ filters, setFilters, allProducts }) {
+function FilterSidebar({ filters, setFilters }) {
 
      // TOGGLE FILTER
     function toggleFilter(type, value) {

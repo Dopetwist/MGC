@@ -4,7 +4,7 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import FilterSidebar from "../shop/FilterSidebar";
 
-function Layout({ filters, setFilters }) {
+function Layout({ filters, setFilters, allProducts }) {
 
   const location = useLocation();
 
@@ -14,7 +14,7 @@ function Layout({ filters, setFilters }) {
         <Header />
 
         <div className="layout-content" style={{ display: "flex" }}>
-          {location.pathname === "/shop" && <FilterSidebar filters={filters} setFilters={setFilters} />}
+          {location.pathname === "/shop" && <FilterSidebar filters={filters} setFilters={setFilters} allProducts={allProducts} />}
 
           <main style={{ flex: 1 }}>
             <Outlet />
