@@ -312,7 +312,7 @@ const jewelryCollections = {
       name: "Figaro Chain Necklace",
       description:
         "Classic Figaro gold neck chain crafted for luxury fashion.",
-      price: 2235,
+      price: 1235,
       currency: "USD",
       purity: "22K Gold",
       gemstone: "None",
