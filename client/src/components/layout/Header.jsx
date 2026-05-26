@@ -4,14 +4,14 @@ import Navbar from "./Navbar";
 import NavRightIcons from "./NavRightIcons";
 
 
-function Header() {
+function Header({ cart }) {
 
   return (
 
     <header id="header">
         <Logo />
         <Navbar />
-        <NavRightIcons />
+        <NavRightIcons cart={cart} />
     </header>
   )
 }

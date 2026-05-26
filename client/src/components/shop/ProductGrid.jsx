@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
  * - onAddToCart: callback(product) when Add to Cart is clicked
  */
 
-const ProductGrid = ({ products, columns, onAddToCart }) => {
+const ProductGrid = ({ products, columns, cart, addToCart }) => {
 
   const location = useLocation();
 
@@ -85,7 +85,7 @@ const ProductGrid = ({ products, columns, onAddToCart }) => {
             <button
               type="button"
               style={btnStyle}
-              onClick={() => onAddToCart && onAddToCart(p)}
+              onClick={() => addToCart && addToCart(p)}
             >
               Add to cart
             </button>

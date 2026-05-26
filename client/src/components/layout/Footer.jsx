@@ -14,7 +14,7 @@ function Footer() {
 
           <div className="footer-contact-details">
             <p className="footer-contact-us">Contact Us:</p>
-            <p><MapPin size={24} className='footer-icon' /> 123 Jewelry Street, Lagos, Nigeria</p>
+            <p><MapPin size={24} className='footer-icon' /> 123 Jewelry Street, Delta, Nigeria</p>
             <p><Mail size={24} className='footer-icon' /> info@misangoldcollection.com</p>
             <p><Phone size={24} className='footer-icon' /> +234 123 456 7890</p>
 

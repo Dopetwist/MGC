@@ -8,12 +8,12 @@ import TestimonialsSection from '../components/home/TestimonialsSection';
 import Footer from '../components/layout/Footer';
 
 
-function HomePage() {
+function HomePage({ cart }) {
     
   return (
 
     <div id="home-page">
-        <Header />
+        <Header cart={cart} />
         <MarqueeBar />
         <HeroSection />
         <CategoryGrid />

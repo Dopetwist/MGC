@@ -4,14 +4,14 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import FilterSidebar from "../shop/FilterSidebar";
 
-function Layout({ filters, setFilters, allProducts }) {
+function Layout({ cart, filters, setFilters, allProducts }) {
 
   const location = useLocation();
 
   return (
 
       <div className="layout">
-        <Header />
+        <Header cart={cart} />
 
         <div className="layout-content" style={{ display: "flex" }}>
           {location.pathname === "/shop" && <FilterSidebar filters={filters} setFilters={setFilters} allProducts={allProducts} />}
