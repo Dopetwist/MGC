@@ -41,7 +41,7 @@ function CartPage() {
         <div className="order-summary">
             <p className="order-text">Order Summary</p>
 
-            <div className="order-container">
+            <div className="cart-order-container">
               <div className="summary-stats">
                 <div className="subtotal cart-flex">
                   <p className="order-left-text">Subtotal(3 items)</p>

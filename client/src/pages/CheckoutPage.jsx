@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { CreditCard, Landmark } from "lucide-react";
 
 
 function CheckoutPage() {
 
   const [ type, setType ] = useState("");
+
+  const navigate = useNavigate();
     
   return (
 
@@ -137,7 +140,12 @@ function CheckoutPage() {
             )}
           </div>
 
-          <button className="place-order">Place Order - $4,350</button>
+          <button 
+          className="place-order"
+          onClick={() => navigate("/confirmation")}
+          >
+            Place Order - $4,350
+          </button>
         </div>
 
         <div className="second-section">
@@ -157,7 +165,7 @@ function CheckoutPage() {
                   <p className="body-text">18K Gold</p>
                 </div>
 
-                <p className="body-text order-price">$500</p>
+                <p className="body-text order-price">$3,800</p>
               </div>
             </div>
 
@@ -174,7 +182,7 @@ function CheckoutPage() {
                   <p className="body-text">22K Gold</p>
                 </div>
 
-                <p className="body-text order-price">$250</p>
+                <p className="body-text order-price">$550</p>
               </div>
             </div>
 

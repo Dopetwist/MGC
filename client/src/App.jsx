@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import jewelryCollections from "./data/products";
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/confirmation" element={<OrderConfirmationPage />} />
       </Route>
     </Routes>
   );

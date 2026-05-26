@@ -1597,3 +1597,93 @@ button.place-order:hover {
     gap: 0.5rem;
     margin: 1rem 0;
 }
+
+#order-confirmation-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-success {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem;
+    width: 50%;
+}
+
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 4rem 0 2rem;
+}
+
+.order-container .checkmark {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.order-container .checkmark p {
+    font-size: 5rem;
+    color: var(--gold);
+}
+
+.payment-header {
+    font-family: var(--inter);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+#thank-you-text {
+    font-size: 2rem;
+    font-family: var(--georgia);
+}
+
+.payment-description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.payment-description p {
+    font-family: var(--inter);
+    margin: 0.7rem 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.payment-description p.payment-sub-text {
+    color: #777;
+}
+
+.shop-back-btn {
+    font-weight: 600;
+    font-family: var(--georgia);
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.6rem 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: .2s ease;
+}
+
+.shop-back-btn:hover {
+    cursor: pointer;
+    background: #f5d06a;
+}
