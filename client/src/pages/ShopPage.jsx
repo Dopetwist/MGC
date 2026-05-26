@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ProductGrid from "../components/shop/ProductGrid";
 
 
-function ShopPage({ filteredProducts }) { 
+function ShopPage({ filteredProducts, cart, addToCart }) { 
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ sortOption, setSortOption ] = useState("newest");
 
@@ -71,7 +71,12 @@ function ShopPage({ filteredProducts }) {
         </div>
 
         <div className="shop-content">
-          <ProductGrid products={currentProducts} columns={4} />
+          <ProductGrid 
+            cart={cart} 
+            addToCart={addToCart} 
+            products={currentProducts} 
+            columns={4} 
+            />
         </div>
 
         {totalPages > 1 && (

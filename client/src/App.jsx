@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router";
 import HomePage from './pages/HomePage';
 import Layout from './components/layout/Layout';
@@ -17,6 +17,16 @@ function App() {
     categories: [],
     purity: [],
     availability: [],
+  });
+
+  // Save Cart to Local Storage for persistence
+  const [ cart, setCart ] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem("cart");
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch {
+      return [];
+    }
   });
 
   // CONVERT PRODUCTS OBJECT ARRAYS INTO ONE ARRAY
@@ -47,16 +57,41 @@ function App() {
     );
   });
 
+  // Load cart from localstorage
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) => item.id === product.id
+      );
+
+      if (existingItem) {
+        // Increase quantity
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // Add new product
+        return [...prevCart, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage cart={cart} />} />
 
-      <Route element={<Layout filters={filters} setFilters={setFilters} />}>
-        <Route path="/collections" element={<CollectionsPage />} />
-        <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
+      <Route element={<Layout cart={cart} filters={filters} setFilters={setFilters} />}>
+        <Route path="/collections" element={<CollectionsPage cart={cart} addToCart={addToCart} />} />
+        <Route path="/shop" element={<ShopPage cart={cart} addToCart={addToCart} filteredProducts={filteredProducts} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/confirmation" element={<OrderConfirmationPage />} />
       </Route>

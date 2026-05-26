@@ -4,7 +4,7 @@ import jewelryCollections from "../data/products";
 import ProductGrid from "../components/shop/ProductGrid";
 
 
-function CollectionsPage() {
+function CollectionsPage({ cart, addToCart }) {
     
   return (
 
@@ -21,7 +21,12 @@ function CollectionsPage() {
             <h3>Rings</h3>
             <div className="hero-line"></div>
           </div>
-          <ProductGrid products={jewelryCollections.rings} columns={4} />
+          <ProductGrid 
+            cart={cart}
+            addToCart={addToCart}
+            products={jewelryCollections.rings} 
+            columns={4} 
+          />
         </div>
 
         <div className="necklaces-container collection-item">
@@ -29,7 +34,12 @@ function CollectionsPage() {
             <h3>Necklaces</h3>
             <div className="hero-line"></div>
           </div>
-          <ProductGrid products={jewelryCollections.necklaces} columns={4} />
+          <ProductGrid 
+            cart={cart}
+            addToCart={addToCart}  
+            products={jewelryCollections.necklaces} 
+            columns={4} 
+            />
         </div>
 
         <div className="bracelets-container collection-item">
@@ -37,7 +47,12 @@ function CollectionsPage() {
             <h3>Bracelets</h3>
             <div className="hero-line"></div>
           </div>
-          <ProductGrid products={jewelryCollections.bracelets} columns={4} />
+          <ProductGrid 
+            cart={cart}
+            addToCart={addToCart}
+            products={jewelryCollections.bracelets} 
+            columns={4} 
+          />
         </div>
 
         <div className="earrings-container collection-item">
@@ -45,7 +60,12 @@ function CollectionsPage() {
             <h3>Earrings</h3>
             <div className="hero-line"></div>
           </div>
-          <ProductGrid products={jewelryCollections.earrings} columns={4} />
+          <ProductGrid 
+            cart={cart}
+            addToCart={addToCart}
+            products={jewelryCollections.earrings} 
+            columns={4} 
+          />
         </div>
       </div>
     </section>

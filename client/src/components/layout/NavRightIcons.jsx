@@ -1,9 +1,14 @@
 import { useNavigate } from "react-router";
 import { Search, Heart, ShoppingBag, User } from "lucide-react";
 
-function NavRightIcons() {
+function NavRightIcons({ cart = [] }) {
 
   const navigate = useNavigate();
+
+  let totalItems = cart.reduce(
+      (total, item) => total + item.quantity,
+      0
+  );
 
   return (
 
@@ -19,7 +24,7 @@ function NavRightIcons() {
 
             <div className="cart-count-box">
               <p className="cart-count body-text">
-                  3
+                  { totalItems }
               </p>
             </div>
         </div>

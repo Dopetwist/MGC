@@ -844,6 +844,26 @@ section#hero {
     background: #333;
 }
 
+.empty-container {
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.empty-cart {
+    font-size: 1.2rem;
+    font-family: var(--inter);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.shopping-cart {
+    color: var(--deep-gold);
+}
+
 #about-strip {
     background: #131313;
     padding: 5rem 5%;
