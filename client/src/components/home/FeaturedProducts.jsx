@@ -53,7 +53,7 @@ function FeaturedProducts() {
         <div className="featured-flex">
           <p className="featured-pieces">Featured <span>Pieces</span></p>
 
-          <HashLink to="/collections" className="shop-all-link">
+          <HashLink to={"/shop"} smooth className="shop-all-link">
             Shop All <MoveRight size={16} />
           </HashLink>
         </div>
