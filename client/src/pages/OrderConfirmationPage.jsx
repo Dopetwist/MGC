@@ -16,7 +16,7 @@ function OrderConfirmationPage() {
           </div>
 
           <div className="payment-description">
-            <p id="thank-you-text">Thank you, <strong>Adaeze</strong> for your Order!</p>
+            <p id="thank-you-text">Thank you, <strong>Richard</strong> for your Order!</p>
 
             <p className="payment-sub-text">Your order has been received and is being processed. You'll receive a confirmation email shortly.</p>
 
@@ -25,7 +25,7 @@ function OrderConfirmationPage() {
 
           <button
           className="shop-back-btn"
-          onClick={() => navigate("/collections")}
+          onClick={() => navigate("/shop")}
           >
             Continue Shopping
           </button>

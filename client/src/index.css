@@ -518,6 +518,273 @@ section#hero {
     transition: transform 0.3s ease;
 }
 
+/* About and Contact pages */
+#about-page, #contact-page {
+    background: var(--black);
+    padding: 2rem 5%;
+}
+
+.page-header {
+    max-width: 940px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.page-header .eyebrow {
+    color: var(--gold);
+    font-family: var(--poppins);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.page-header h1 {
+    font-family: var(--georgia);
+    color: var(--text-color);
+    font-size: 3rem;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+
+.page-header .page-lead {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--sub-text-color);
+    font-family: var(--inter);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.hero-highlights,
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto 3rem auto;
+}
+
+.hero-card,
+.value-item,
+.contact-card,
+.about-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.08rem solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.hero-card .hero-icon,
+.value-item .value-icon,
+.contact-card .contact-icon {
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.hero-card h3,
+.value-item h3,
+.contact-card h3,
+.about-card h2 {
+    margin-bottom: 0.75rem;
+    font-family: var(--poppins);
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    color: var(--gold);
+}
+
+.hero-card p,
+.value-item p,
+.contact-card p,
+.about-card p,
+.about-card ul {
+    color: var(--sub-text-color);
+    font-family: var(--inter);
+    line-height: 1.8;
+}
+
+.about-card ul {
+    list-style: disc inside;
+    margin-top: 1rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto 3rem auto;
+}
+
+.about-story {
+    max-width: 940px;
+    margin: 0 auto 4rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.08rem solid rgba(255, 255, 255, 0.08);
+}
+
+.about-story h2 {
+    font-family: var(--georgia);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about-story p {
+    color: var(--sub-text-color);
+    font-family: var(--inter);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-cta {
+    width: 100%;
+    background: #ededed35;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about-cta h1 {
+    font-family: var(--georgia);
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.about-cta .about-shop-btn {
+    font-family: var(--poppins);
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: var(--gold);
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.about-cta .about-shop-btn:hover {
+   box-shadow: 0 0 1rem var(--gold);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2rem;
+    max-width: 1120px;
+    margin: 0 auto 4rem auto;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-card a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    color: var(--gold);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.08rem solid rgba(255, 255, 255, 0.08);
+}
+
+.form-row {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.form-row label {
+    color: var(--text-color);
+    font-family: var(--poppins);
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-color);
+    border: 0.08rem solid rgba(255, 255, 255, 0.08);
+    font-family: var(--inter);
+    font-size: 1rem;
+    resize: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.form-submit {
+    margin-top: 0.5rem;
+    padding: 0.8rem 1rem;
+    width: fit-content;
+    background: var(--gold);
+    color: var(--black);
+    font-family: var(--inter);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.form-submit:hover {
+    background: #f5d06a;
+}
+
+@media (max-width: 920px) {
+    .about-grid,
+    .contact-layout,
+    .hero-highlights,
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header .page-lead {
+        font-size: 1rem;
+    }
+}
+
 .featured-card .featured-details {
     padding: 1rem;
     border-top: 0.05rem solid var(--sub-text-color);
@@ -1197,6 +1464,18 @@ p.purity {
 
 .cart-header {
     margin-bottom: 2rem;
+}
+
+.cart-header h1 {
+    width: fit-content;
+    margin-bottom: 0.5rem;
+}
+
+.cart-header p {
+    width: fit-content;
+    font-family: var(--inter);
+    font-size: 0.9rem;
+    color: #777;
 }
 
 .cart-box {

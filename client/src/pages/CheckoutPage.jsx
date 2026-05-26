@@ -40,22 +40,22 @@ function CheckoutPage() {
                 <div className="names">
                   <div className="input-box">
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" id="firstName" placeholder="Your first name" />
+                    <input type="text" id="firstName" placeholder="Your first name" required />
                   </div>
                   <div className="input-box">
                     <label htmlFor="lastName">Last Name</label>
-                    <input type="text" id="lastName" placeholder="Your last name" />
+                    <input type="text" id="lastName" placeholder="Your last name" required />
                   </div>
                 </div>
 
                 <div className="input-box">
                   <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email"  placeholder="Your email address" />
+                  <input type="email" id="email"  placeholder="Your email address" required />
                 </div>
 
                 <div className="input-box">
                   <label htmlFor="phone">Phone Number</label>
-                  <input type="tel" id="phone" placeholder="Your phone number" />
+                  <input type="tel" id="phone" placeholder="Your phone number" required />
                 </div>
               </div>
               
@@ -64,13 +64,13 @@ function CheckoutPage() {
 
                 <div className="input-box">
                   <label htmlFor="address">Street Address</label>
-                  <input type="text" id="address" placeholder="Enter your shipping address" />
+                  <input type="text" id="address" placeholder="Enter your shipping address" required />
                 </div>
 
                 <div className="state-city">
                   <div className="input-box">
                     <label htmlFor="state">State</label>
-                    <select id="state">
+                    <select id="state" required>
                       <option value="">Select your state</option>
                       <option value="abuja">Abuja</option>
                       <option value="lagos">Lagos</option>
@@ -80,7 +80,7 @@ function CheckoutPage() {
                   </div>
                   <div className="input-box">
                     <label htmlFor="city">City</label>
-                    <input type="text" id="city" placeholder="Your city" />
+                    <input type="text" id="city" placeholder="Your city" required />
                   </div>
                 </div>
               </div>
@@ -140,12 +140,15 @@ function CheckoutPage() {
             )}
           </div>
 
-          <button 
-          className="place-order"
-          onClick={() => navigate("/confirmation")}
-          >
-            Place Order - $4,350
-          </button>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <button 
+            type="submit"
+            className="place-order"
+            onClick={() => navigate("/confirmation")}
+            >
+              Place Order - $4,350
+            </button>
+          </form>
         </div>
 
         <div className="second-section">

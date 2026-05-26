@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router";
 
 function HeroSection() {
+
+    const navigate = useNavigate();
 
     return (
 
@@ -22,8 +25,18 @@ function HeroSection() {
                     <p className="hero-sub-text">Experience the epitome of luxury with our exquisite range of 18K and 24K gold jewelries. Each piece is crafted to perfection and quality. Indulge in the brilliance of Misan Gold and elevate your jewelry game to new heights.</p>
 
                     <div className="hero-buttons">
-                        <button className="explore-btn">Explore Collection</button>
-                        <button className="sell-btn">Sell Your Gold</button>
+                        <button 
+                        className="explore-btn"
+                        onClick={() => navigate("/collections")}
+                        >
+                          Explore Collection
+                        </button>
+                        <button 
+                        className="sell-btn"
+                        onClick={() => navigate("/contact")}
+                        >
+                          Sell Your Gold
+                        </button>
                     </div>
 
                     <div id="stats">
