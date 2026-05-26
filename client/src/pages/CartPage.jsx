@@ -49,7 +49,7 @@ function CartPage() {
                 </div>
                 <div className="shipping cart-flex">
                   <p className="order-left-text">Shipping</p>
-                  <p>Free</p>
+                  <p className="free">Free</p>
                 </div>
               </div>
 
@@ -75,16 +75,16 @@ function CartPage() {
 
               <div className="cart-icons-box">
                   <div className="secure">
-                    <LockKeyhole size={24} className="cart-icon" />
+                    <span className="cart-icon">🔒</span>
                     <p>Secured</p>
                   </div>
 
                   <div className="insured">
-                    <Truck size={24} className="cart-icon" />
+                    <span className="cart-icon">🚚</span>
                     <p>Insured</p>
                   </div>
                   <div className="reliable">
-                    <RefreshCcw size={24} className="cart-icon" />
+                    <span className="cart-icon">↩️</span>
                     <p>Reliable</p>
                   </div>
               </div>
