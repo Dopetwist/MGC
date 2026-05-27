@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from 'react-router';
 import PropTypes from 'prop-types';
 
@@ -11,9 +10,14 @@ import PropTypes from 'prop-types';
  * - onAddToCart: callback(product) when Add to Cart is clicked
  */
 
-const ProductGrid = ({ products, columns, cart, addToCart }) => {
+const ProductGrid = ({ products, columns, cart, addToCart, handleToast }) => {
 
   const location = useLocation();
+
+  // Function to check if product is already in cart
+  const isInCart = (id) => {
+      return cart.some(item => item.id === id);
+  }
 
   const gridStyle = {
     display: 'grid',
@@ -43,14 +47,6 @@ const ProductGrid = ({ products, columns, cart, addToCart }) => {
   const descStyle = { fontFamily: 'var(--inter)', fontSize: 13, color: '#555', marginBottom: 'auto' }
   const footerStyle = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 12 }
   const priceStyle = { fontWeight: 700 }
-  const btnStyle = {
-    background: '#0D0D0D',
-    color: '#fff',
-    border: 'none',
-    padding: '8px 12px',
-    borderRadius: 6,
-    cursor: 'pointer',
-  }
 
   if (!Array.isArray(products) || products.length === 0) {
     return <div className="no-products">No products found.</div>
@@ -84,10 +80,14 @@ const ProductGrid = ({ products, columns, cart, addToCart }) => {
             <div style={priceStyle}>{formatPrice(p.price)}</div>
             <button
               type="button"
-              style={btnStyle}
-              onClick={() => addToCart && addToCart(p)}
+              id="product-btn"
+              className={`cart-btn ${isInCart(p.id) ? "added" : ""}`}
+              onClick={() => {
+                addToCart && addToCart(p);
+                handleToast();
+              }}
             >
-              Add to cart
+              {isInCart(p.id) ? "✔ In Cart" : "Add to cart"} 
             </button>
           </div>
         </article>
