@@ -3,11 +3,15 @@ import { useNavigate } from "react-router";
 import { CreditCard, Landmark } from "lucide-react";
 
 
-function CheckoutPage() {
+function CheckoutPage({ setCart }) {
 
   const [ type, setType ] = useState("");
 
   const navigate = useNavigate();
+
+  const clearCart = () => {
+      setCart([]); // Clear cart from local storage
+  }
     
   return (
 
@@ -144,7 +148,10 @@ function CheckoutPage() {
             <button 
             type="submit"
             className="place-order"
-            onClick={() => navigate("/confirmation")}
+            onClick={() => {
+              navigate("/confirmation");
+              clearCart();
+            }}
             >
               Place Order - $4,350
             </button>

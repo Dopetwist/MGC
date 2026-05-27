@@ -482,7 +482,8 @@ section#hero {
     font-size: 0.8rem;
 }
 
-.view-all-link:hover {
+.view-all-link:hover,
+.shop-all-link:hover {
     text-decoration: underline;
 }
 
@@ -1452,8 +1453,8 @@ p.purity {
 }
 
 .cart-items {
-    width: calc(100% - 50%);
-    padding: 2rem 1rem;
+    width: calc(100% - 30%);
+    padding: 2rem;
 }
 
 .cart-items-buttons {
@@ -1500,7 +1501,21 @@ p.purity {
 
 .cart-box {
     background: var(--text-color);
-    padding: 2rem;
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    border: 0.07rem solid var(--sub-text-color);
+    border-radius: 0.5rem;
+}
+
+.cart-box .product-contents {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .cart-icons-box {
@@ -1530,6 +1545,45 @@ p.purity {
     font-size: 1.4rem;
 }
 
+#quantity-box {
+    width: 10%;
+    margin-top: 1rem;
+}
+
+#quantity-box .quantity-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+#quantity-box .quantity-btns button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #cc95095d;
+    color: var(--text-color);
+    /* margin: 0 0.5rem; */
+    padding: 0.1rem 0.5rem;
+    border: 0.05rem solid var(--secondary-color);
+}
+
+#quantity-box .quantity-btns button:hover {
+    cursor: pointer;
+    background: var(--nav-gold);
+}
+
+.product-quantity {
+    margin: 0 0.5rem;
+}
+
+.remove-item {
+    font-family: var(--inter);
+    font-size: 0.7rem;
+    color: #ff0000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .back-to-shop {
     display: flex;
     align-items: center;
@@ -1537,7 +1591,7 @@ p.purity {
 }
 
 .order-summary {
-    width: 50%;
+    width: 30%;
     background: var(--text-color);
     padding: 2rem;
 }
@@ -1810,7 +1864,8 @@ button.place-order:hover {
 }
 
 .product-name {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
+    max-width: 60%;
 }
 
 .product-name h2 {
@@ -1819,10 +1874,18 @@ button.place-order:hover {
     margin-bottom: 0.5rem;
 }
 
-.product-name p {
+.product-name p.cart-product-description {
+    max-width: 300px;
     font-family: var(--inter);
     font-size: 0.7rem;
     color: #777;
+}
+
+.product-name .cart-purity-text {
+    font-family: var(--inter);
+    font-size: 0.7rem;
+    color: #777;
+    margin-top: 0.5rem;
 }
 
 .product-image {
@@ -1985,4 +2048,51 @@ button.place-order:hover {
 .shop-back-btn:hover {
     cursor: pointer;
     background: #f5d06a;
+}
+
+/* Container to center the toast */
+.toast-container {
+    width: 30%;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: none; /* allows clicks through container */
+}
+
+.toast {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    text-align: center;
+    pointer-events: all;
+    animation: slideIn 0.4s ease;
+}
+
+/* Types */
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.info {
+    background-color: #007bff;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

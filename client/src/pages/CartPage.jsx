@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import { HashLink } from "react-router-hash-link";
+import Toast from "../components/ui/Toast";
 import { 
   MoveLeft, 
   MoveRight, 
@@ -12,10 +14,20 @@ import {
 
 function CartPage({ cart, setCart }) {
 
+  const [ toast, setToast ] = useState(null);
+
   const navigate = useNavigate();
 
   const clearCart = () => {
       setCart([]); // Clear cart from local storage
+      window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  const handleToast = () => {
+      setToast({
+          message: "✔ Product quantity updated successfully!",
+          type: "success"
+      })
   }
 
   const total = cart.reduce(
@@ -24,6 +36,42 @@ function CartPage({ cart, setCart }) {
   );
 
   const roundedTotal = total.toFixed(2);
+
+  // Remove item from cart and show toast
+  const removeFromCart = (id) => {
+      setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  }
+
+  const removeButtonToast = () => {
+      setToast({
+          message: "✔ Product removed from cart!",
+          type: "success"
+      })
+  }
+
+  // Increase quantity of items in cart
+    const increaseQuantity = (id) => {
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === id
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            )
+        );
+    };
+
+    // Decrease quantity of items in cart
+    const decreaseQuantity = (id) => {
+        setCart((prevCart) =>
+            prevCart
+                .map((item) =>
+                    item.id === id
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                )
+                .filter((item) => item.quantity > 0) // remove if quantity = 0
+        );
+    };
     
   return (
 
@@ -37,9 +85,61 @@ function CartPage({ cart, setCart }) {
               </div>
 
               <div className="cart-items-container">
-                <div className="cart-box">
-                  <h2>Order items are contained here</h2>
-                </div>
+                {cart.map((product) => (
+                  <div key={product.id} className="cart-box">
+                    <div className="product-image">
+                        <img src={product.image} width={100} height={100} alt={`${product.name} Image`} />
+                    </div>
+
+                    <div className="product-contents">
+                      <div className="product-name">
+                          <h2 className="heading-text">{product.name}</h2>
+
+                          <p className="cart-product-description">{product.description}</p>
+
+                          <p className="cart-purity-text">{product.purity}</p>
+
+                          <div id="quantity-box">
+                            <div className="quantity-btns">
+                                <button 
+                                id="decrease"
+                                onClick={() => {
+                                    decreaseQuantity(product.id);
+                                    handleToast();
+                                }}
+                                disabled={product.quantity === 1} // Disable button if quantity is 1
+                                >
+                                    -
+                                </button>
+
+                                <p className="body-text product-quantity">{product.quantity}</p>
+
+                                <button 
+                                id="increase"
+                                onClick={() => {
+                                    increaseQuantity(product.id);
+                                    handleToast();
+                                }}
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                      </div>
+
+                      <p className="body-text order-price">${(product.price * product.quantity).toFixed(2)}</p>
+
+                      <p 
+                      className="remove-item" 
+                      onClick={() => {
+                          removeFromCart(product.id);
+                          removeButtonToast();
+                      }}>
+                          Remove Item
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
               
               <div className="cart-items-buttons">
@@ -119,6 +219,15 @@ function CartPage({ cart, setCart }) {
                 Your Cart is empty. <br /> Add new items to checkout! 
             </h3>
           </div>}
+
+        {/* Render Toast */}
+        {toast && (
+          <Toast
+              message={toast.message}
+              type={toast.type}
+              onClose={() => setToast(null)}
+          />
+        )}
     </section>
   )
 }
