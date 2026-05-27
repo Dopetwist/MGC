@@ -1592,6 +1592,7 @@ p.purity {
 
 .order-summary {
     width: 30%;
+    height: fit-content;
     background: var(--text-color);
     padding: 2rem;
 }
@@ -2070,6 +2071,10 @@ button.place-order:hover {
     text-align: center;
     pointer-events: all;
     animation: slideIn 0.4s ease;
+}
+
+.toast p {
+    font-family: var(--inter);
 }
 
 /* Types */

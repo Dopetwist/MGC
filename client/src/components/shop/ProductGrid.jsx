@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from 'react-router';
 import PropTypes from 'prop-types';
 
@@ -11,7 +10,7 @@ import PropTypes from 'prop-types';
  * - onAddToCart: callback(product) when Add to Cart is clicked
  */
 
-const ProductGrid = ({ products, columns, cart, addToCart }) => {
+const ProductGrid = ({ products, columns, cart, addToCart, handleToast }) => {
 
   const location = useLocation();
 
@@ -85,7 +84,10 @@ const ProductGrid = ({ products, columns, cart, addToCart }) => {
             <button
               type="button"
               style={btnStyle}
-              onClick={() => addToCart && addToCart(p)}
+              onClick={() => {
+                addToCart && addToCart(p);
+                handleToast();
+              }}
             >
               Add to cart
             </button>

@@ -1,10 +1,21 @@
+import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { MoveLeft } from "lucide-react";
 import jewelryCollections from "../data/products";
 import ProductGrid from "../components/shop/ProductGrid";
+import Toast from "../components/ui/Toast";
 
 
 function CollectionsPage({ cart, addToCart }) {
+
+  const [ toast, setToast ] = useState(null);
+
+  const handleToast = () => {
+      setToast({
+          message: "✔ Cart updated successfully!",
+          type: "success"
+      })
+  }
     
   return (
 
@@ -24,6 +35,7 @@ function CollectionsPage({ cart, addToCart }) {
           <ProductGrid 
             cart={cart}
             addToCart={addToCart}
+            handleToast={handleToast}
             products={jewelryCollections.rings} 
             columns={4} 
           />
@@ -36,7 +48,8 @@ function CollectionsPage({ cart, addToCart }) {
           </div>
           <ProductGrid 
             cart={cart}
-            addToCart={addToCart}  
+            addToCart={addToCart}
+            handleToast={handleToast}
             products={jewelryCollections.necklaces} 
             columns={4} 
             />
@@ -50,6 +63,7 @@ function CollectionsPage({ cart, addToCart }) {
           <ProductGrid 
             cart={cart}
             addToCart={addToCart}
+            handleToast={handleToast}
             products={jewelryCollections.bracelets} 
             columns={4} 
           />
@@ -63,11 +77,21 @@ function CollectionsPage({ cart, addToCart }) {
           <ProductGrid 
             cart={cart}
             addToCart={addToCart}
+            handleToast={handleToast}
             products={jewelryCollections.earrings} 
             columns={4} 
           />
         </div>
       </div>
+
+      {/* Render Toast */}
+      {toast && (
+        <Toast
+            message={toast.message}
+            type={toast.type}
+            onClose={() => setToast(null)}
+        />
+      )}
     </section>
   )
 }

@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react';
 import ProductGrid from "../components/shop/ProductGrid";
+import Toast from '../components/ui/Toast';
 
 
 function ShopPage({ filteredProducts, cart, addToCart }) { 
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ sortOption, setSortOption ] = useState("newest");
+
+  const [ toast, setToast ] = useState(null);
+
+  const handleToast = () => {
+      setToast({
+          message: "✔ Cart updated successfully!",
+          type: "success"
+      })
+  }
 
 
   // Sort products based on selected option
@@ -74,6 +84,7 @@ function ShopPage({ filteredProducts, cart, addToCart }) {
           <ProductGrid 
             cart={cart} 
             addToCart={addToCart} 
+            handleToast={handleToast}
             products={currentProducts} 
             columns={4} 
             />
@@ -110,6 +121,14 @@ function ShopPage({ filteredProducts, cart, addToCart }) {
         )}
       </div>
 
+      {/* Render Toast */}
+      {toast && (
+        <Toast
+            message={toast.message}
+            type={toast.type}
+            onClose={() => setToast(null)}
+        />
+      )}
     </section>
   )
 }
