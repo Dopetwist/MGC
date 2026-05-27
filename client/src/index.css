@@ -815,10 +815,9 @@ section#hero {
 }
 
 .first-price {
-    font-family: var(--poppins);
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--black);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .discount-price {
@@ -835,7 +834,6 @@ section#hero {
     font-family: var(--inter);
     font-size: 1.2rem;
     font-weight: 400;
-    text-transform: uppercase;
     border-radius: 0.3rem;
     transition: background-color 0.3s ease;
 }
@@ -843,6 +841,14 @@ section#hero {
 .cart-btn:hover {
     cursor: pointer;
     background: #333;
+}
+
+#product-btn {
+    font-size: 0.9rem;
+}
+
+#product-btn.added {
+    background: #555;
 }
 
 .empty-container {
