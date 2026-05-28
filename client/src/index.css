@@ -834,13 +834,18 @@ section#hero {
     font-family: var(--inter);
     font-size: 1.2rem;
     font-weight: 400;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
     transition: background-color 0.3s ease;
 }
 
 .cart-btn:hover {
     cursor: pointer;
     background: #333;
+}
+
+#featured-add-btn {
+    font-size: 1.3rem;
+    padding: 0.4rem 0.9rem;
 }
 
 #product-btn {
@@ -1876,7 +1881,7 @@ button.place-order:hover {
 }
 
 .product-name h2 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
@@ -1884,14 +1889,14 @@ button.place-order:hover {
 .product-name p.cart-product-description {
     max-width: 300px;
     font-family: var(--inter);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #777;
 }
 
 .product-name .cart-purity-text {
     font-family: var(--inter);
     font-size: 0.7rem;
-    color: #777;
+    color: var(--deep-gold);
     margin-top: 0.5rem;
 }
 

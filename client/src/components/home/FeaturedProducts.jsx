@@ -45,6 +45,15 @@ function FeaturedProducts() {
     }
   ];
 
+  // Simple price formatter for USD.
+  function formatPrice(value) {
+    if (value == null) return ''
+    if (typeof value === 'number') {
+      return value.toLocaleString(undefined, { style: 'currency', currency: 'USD' })
+    }
+    return String(value)
+  }
+
   return (
 
     <section id="featured-products">
@@ -72,13 +81,16 @@ function FeaturedProducts() {
                 </p>
                 <div className="price-aspect">
                   <div className="price-box">
-                    <p className="first-price">${piece.firstPrice.toFixed(2)}</p>
+                    <p className="first-price">{formatPrice(piece.firstPrice)}</p>
                     {piece.discountPrice && (
-                      <p className="discount-price">${piece.discountPrice.toFixed(2)}</p>
+                      <p className="discount-price">{formatPrice(piece.discountPrice)}</p>
                     )}
                   </div>
 
-                  <button className="cart-btn">
+                  <button 
+                  id="featured-add-btn"
+                  className="cart-btn"
+                  >
                     +
                   </button>
                 </div>
