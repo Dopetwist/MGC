@@ -103,22 +103,22 @@ function FilterSidebar({ filters, setFilters }) {
                         <form>
                             <div>
                                 <input type="radio" name="price" id="range1" />
-                                <label htmlFor="range1">N - N100,000</label>
+                                <label htmlFor="range1">$50 - $500</label>
                             </div>
 
                             <div>
                                 <input type="radio" name="price" id="range2" />
-                                <label htmlFor="range2">N100,000 - N500,000</label>
+                                <label htmlFor="range2">$500 - $1,000</label>
                             </div>
 
                             <div>
                                 <input type="radio" name="price" id="range3" />
-                                <label htmlFor="range3">N500,000 - N1,000,000</label>
+                                <label htmlFor="range3">$1,000 - $2,000</label>
                             </div>
 
                             <div>
                                 <input type="radio" name="price" id="range4" />
-                                <label htmlFor="range4">N1,000,000+</label>
+                                <label htmlFor="range4">$2,000+</label>
                             </div>
                         </form>
                     </div>

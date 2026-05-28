@@ -30,6 +30,10 @@ function App() {
   });
 
   // CONVERT PRODUCTS OBJECT ARRAYS INTO ONE ARRAY
+
+  /* Used useMemo on 'allProducts' and 'filteredProducts' to stop firing page reset on ShopPage 
+  when 'Add to cart' button is clicked on a product */
+  
   const allProducts = useMemo(
     () => Object.values(jewelryCollections).flat(),
     []

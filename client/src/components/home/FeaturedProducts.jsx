@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { MoveRight } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
+import { revealCards } from "../../utils/reveal";
 
 
 function FeaturedProducts() {
+
+  useEffect(() => {
+    revealCards(".featured-card");
+  }, []);
 
   const featuredPieces = [
     {

@@ -1,6 +1,17 @@
+import { useEffect } from "react";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { revealBottom } from "../utils/reveal";
 
 function ContactPage() {
+
+    useEffect(() => {
+        revealBottom(".page-header");
+    }, []);
+
+    function handleSubmit() {
+        return alert("Functionality not implemented yet!");
+    }
+
     return (
 
         <section id="contact-page">
@@ -37,7 +48,7 @@ function ContactPage() {
                     </div>
                 </div>
 
-                <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <form className="contact-form" onSubmit={(e) => {e.preventDefault(); handleSubmit();}}>
                     <div className="form-row">
                         <label htmlFor="contact-name">Full name</label>
                         <input id="contact-name" type="text" className="form-input" placeholder="Your name" required />
@@ -54,7 +65,12 @@ function ContactPage() {
                         <label htmlFor="contact-message">Message</label>
                         <textarea id="contact-message" className="form-textarea" rows="6" placeholder="Tell us about your gold enquiry" required />
                     </div>
-                    <button type="submit" className="form-submit">Send Message</button>
+                    <button 
+                    type="submit" 
+                    className="form-submit"
+                    >
+                        Send Message
+                    </button>
                 </form>
             </div>
         </section>

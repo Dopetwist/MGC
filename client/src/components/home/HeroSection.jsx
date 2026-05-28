@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { revealBottom } from "../../utils/reveal";
 
 function HeroSection() {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+      revealBottom(".gold-image");
+    }, []);
 
     return (
 
