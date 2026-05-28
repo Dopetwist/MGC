@@ -20,6 +20,10 @@ function CartPage({ cart, setCart }) {
 
   const clearCart = () => {
       setCart([]); // Clear cart from local storage
+      setToast({
+          message: "✔ All items cleared from cart!",
+          type: "success"
+      })
       window.scrollTo({ top: 0, behavior: "smooth" });
   }
 

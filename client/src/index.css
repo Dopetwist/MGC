@@ -834,13 +834,18 @@ section#hero {
     font-family: var(--inter);
     font-size: 1.2rem;
     font-weight: 400;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
     transition: background-color 0.3s ease;
 }
 
 .cart-btn:hover {
     cursor: pointer;
     background: #333;
+}
+
+#featured-add-btn {
+    font-size: 1.3rem;
+    padding: 0.4rem 0.9rem;
 }
 
 #product-btn {

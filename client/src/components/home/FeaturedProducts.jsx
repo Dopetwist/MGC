@@ -87,7 +87,10 @@ function FeaturedProducts() {
                     )}
                   </div>
 
-                  <button className="cart-btn">
+                  <button 
+                  id="featured-add-btn"
+                  className="cart-btn"
+                  >
                     +
                   </button>
                 </div>
