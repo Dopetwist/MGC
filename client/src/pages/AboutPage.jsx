@@ -10,7 +10,7 @@ function AboutPage() {
     useEffect(() => {
         revealLeft("#large-text");
         revealCards(".hero-card");
-        revealBottom(".about-values, .about-story");
+        revealBottom(".about-values, .about-story, .about-cta");
     }, []);
 
     return (

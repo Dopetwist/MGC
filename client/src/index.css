@@ -657,6 +657,8 @@ section#hero {
     font-family: var(--georgia);
     color: var(--text-color);
     margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.5;
 }
 
 .about-cta .about-shop-btn {
@@ -857,7 +859,6 @@ section#hero {
 }
 
 .empty-container {
-    padding-top: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1429,7 +1430,11 @@ p.purity {
 }
 
 #cart-page {
+    min-height: 100vh;
     background: var(--cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-container {
@@ -1973,6 +1978,7 @@ button.place-order:hover {
 }
 
 #order-confirmation-page {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
