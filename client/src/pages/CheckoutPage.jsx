@@ -179,7 +179,7 @@ function CheckoutPage({ cart, setCart }) {
             {cart.map((product) => (
               <div key={product.id} className="order-box">
                 <div className="product-image">
-                    <img src={product.image} width={50} height={50} alt={product.name} />
+                    <img src={product.image} width={50} height={50} alt={product.name} loading="lazy" />
                     <div className="item-quantity">{product.quantity}</div>
                 </div>
 

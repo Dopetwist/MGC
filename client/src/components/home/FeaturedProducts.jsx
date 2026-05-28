@@ -77,7 +77,7 @@ function FeaturedProducts() {
           {featuredPieces.map(piece => (
             <div key={piece.id} className="featured-card">
               <figure>
-                <img src={piece.image} alt={`${piece.name} Image`} />
+                <img src={piece.image} alt={`${piece.name} Image`} loading="lazy" />
               </figure>
 
               <div className="featured-details">

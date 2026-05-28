@@ -56,7 +56,7 @@ const ProductGrid = ({ products, columns, cart, addToCart, handleToast }) => {
     <div style={gridStyle}>
       {products.map((p) => (
         <article key={p.id} style={cardStyle} aria-label={`product-${p.id}`}>
-          {p.image && <img src={p.image} alt={p.name || 'product image'} style={imgStyle} />}
+          {p.image && <img src={p.image} alt={p.name || 'product image'} style={imgStyle} loading="lazy" />}
           <div style={titleStyle}>{p.name}</div>
           {p.description && <div style={descStyle}>{truncate(p.description, 120)}</div>}
 

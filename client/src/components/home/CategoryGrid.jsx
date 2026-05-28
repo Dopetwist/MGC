@@ -48,7 +48,7 @@ function CategoryGrid() {
         {categories.map(category => (
           <div key={category.id} className="category-card">
             <figure>
-              <img src={category.image} alt={`${category.name} Image`} />
+              <img src={category.image} alt={`${category.name} Image`} loading="lazy" />
             </figure>
 
             <div className="category-details">
