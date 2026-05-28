@@ -1876,7 +1876,7 @@ button.place-order:hover {
 }
 
 .product-name h2 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
@@ -1884,14 +1884,14 @@ button.place-order:hover {
 .product-name p.cart-product-description {
     max-width: 300px;
     font-family: var(--inter);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #777;
 }
 
 .product-name .cart-purity-text {
     font-family: var(--inter);
     font-size: 0.7rem;
-    color: #777;
+    color: var(--deep-gold);
     margin-top: 0.5rem;
 }
 

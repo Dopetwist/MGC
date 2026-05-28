@@ -20,7 +20,7 @@ function OrderConfirmationPage() {
 
             <p className="payment-sub-text">Your order has been received and is being processed. You'll receive a confirmation email shortly.</p>
 
-            <p className="order-id">Order ID: #MGC39048</p>
+            <p className="order-id"><strong>Order ID:</strong> #MGC39048</p>
           </div>
 
           <button

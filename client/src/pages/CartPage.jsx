@@ -35,7 +35,14 @@ function CartPage({ cart, setCart }) {
         0
   );
 
-  const roundedTotal = total.toFixed(2);
+  // Simple price formatter for USD.
+  function formatPrice(value) {
+    if (value == null) return ''
+    if (typeof value === 'number') {
+      return value.toLocaleString(undefined, { style: 'currency', currency: 'USD' })
+    }
+    return String(value)
+  }
 
   // Remove item from cart and show toast
   const removeFromCart = (id) => {
@@ -127,7 +134,7 @@ function CartPage({ cart, setCart }) {
                         </div>
                       </div>
 
-                      <p className="body-text order-price">${(product.price * product.quantity).toFixed(2)}</p>
+                      <p className="body-text order-price">{formatPrice(product.price * product.quantity)}</p>
 
                       <p 
                       className="remove-item" 
@@ -167,7 +174,7 @@ function CartPage({ cart, setCart }) {
                 <div className="summary-stats">
                   <div className="subtotal cart-flex">
                     <p className="order-left-text">Subtotal ({`${cart.length} ${cart.length > 1 ? "items" : "item"}`})</p>
-                    <p className="subtotal-amount">${roundedTotal}</p>
+                    <p className="subtotal-amount">{formatPrice(total)}</p>
                   </div>
                   <div className="shipping cart-flex">
                     <p className="order-left-text">Shipping</p>
@@ -177,7 +184,7 @@ function CartPage({ cart, setCart }) {
 
                 <div className="total cart-flex">
                   <p>Total:</p>
-                  <p className="total-amount">${roundedTotal}</p>
+                  <p className="total-amount">{formatPrice(total)}</p>
                 </div>
 
                 <div className="action-buttons">

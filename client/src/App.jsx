@@ -92,7 +92,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
-        <Route path="/checkout" element={<CheckoutPage setCart={setCart} />} />
+        <Route path="/checkout" element={<CheckoutPage cart={cart} setCart={setCart} />} />
         <Route path="/confirmation" element={<OrderConfirmationPage />} />
       </Route>
     </Routes>

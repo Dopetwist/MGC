@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { CreditCard, Landmark } from "lucide-react";
+import { CreditCard, Landmark, MoveRight } from "lucide-react";
 
 
-function CheckoutPage({ setCart }) {
+function CheckoutPage({ cart, setCart }) {
 
   const [ type, setType ] = useState("");
 
@@ -11,6 +11,20 @@ function CheckoutPage({ setCart }) {
 
   const clearCart = () => {
       setCart([]); // Clear cart from local storage
+  }
+
+  const total = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+        0
+  );
+
+  // Simple price formatter for USD.
+  function formatPrice(value) {
+    if (value == null) return ''
+    if (typeof value === 'number') {
+      return value.toLocaleString(undefined, { style: 'currency', currency: 'USD' })
+    }
+    return String(value)
   }
     
   return (
@@ -131,7 +145,7 @@ function CheckoutPage({ setCart }) {
 
             {type === "transfer" && (
               <div className="transfer-container">
-                <p>Please transfer the total amount of <span><strong>$4,350</strong></span> to the below account!</p>
+                <p>Please transfer the total amount of <span><strong>{formatPrice(total)}</strong></span> to the below account!</p>
 
                 <div className="company-account">
                     <p><strong>Account Number:</strong> 0284954839</p>
@@ -153,53 +167,38 @@ function CheckoutPage({ setCart }) {
               clearCart();
             }}
             >
-              Place Order - $4,350
+              Place Order - {formatPrice(total)} <MoveRight />
             </button>
           </form>
         </div>
 
         <div className="second-section">
-          <h2 className="your-order">Your Order (3)</h2>
+          <h2 className="your-order">Your Order ({cart.length})</h2>
 
           <div className="order-items">
-            <div className="order-box">
-              <div className="product-image">
-                  <img src="/path/to/image" width={50} height={50} alt="" />
-                  <div className="item-quantity">1</div>
-              </div>
-
-              <div className="product-contents">
-                <div className="product-name">
-                  <h2 className="heading-text">Earring</h2>
-
-                  <p className="body-text">18K Gold</p>
+            {cart.map((product) => (
+              <div key={product.id} className="order-box">
+                <div className="product-image">
+                    <img src={product.image} width={50} height={50} alt={product.name} />
+                    <div className="item-quantity">{product.quantity}</div>
                 </div>
 
-                <p className="body-text order-price">$3,800</p>
-              </div>
-            </div>
+                <div className="product-contents">
+                  <div className="product-name">
+                    <h2 className="heading-text">{product.name}</h2>
 
-            <div className="order-box">
-              <div className="product-image">
-                <img src="/path/to/image" width={50} height={50} alt="" />
-                <div className="item-quantity">2</div>
-              </div>
+                    <p className="cart-purity-text">{product.purity}</p>
+                  </div>
 
-              <div className="product-contents">
-                <div className="product-name">
-                  <h2 className="heading-text">Necklace</h2>
-
-                  <p className="body-text">22K Gold</p>
+                  <p className="body-text order-price">{formatPrice(product.price)}</p>
                 </div>
-
-                <p className="body-text order-price">$550</p>
               </div>
-            </div>
+            ))}
 
             <div className="summary-stats">
               <div className="subtotal cart-flex">
                 <p className="order-left-text">Subtotal</p>
-                <p className="subtotal-amount">$4,350</p>
+                <p className="subtotal-amount">{formatPrice(total)}</p>
               </div>
               <div className="shipping cart-flex">
                 <p className="order-left-text">Shipping</p>
@@ -209,7 +208,7 @@ function CheckoutPage({ setCart }) {
 
             <div className="total cart-flex">
               <p>Total:</p>
-              <p className="total-amount">$4,350</p>
+              <p className="total-amount">{formatPrice(total)}</p>
             </div>
           </div>
 
