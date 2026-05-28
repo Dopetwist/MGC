@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Routes, Route } from "react-router";
 import HomePage from './pages/HomePage';
 import Layout from './components/layout/Layout';
@@ -30,32 +30,35 @@ function App() {
   });
 
   // CONVERT PRODUCTS OBJECT ARRAYS INTO ONE ARRAY
-  const allProducts = Object.values(jewelryCollections).flat();
+
+  /* Used useMemo on 'allProducts' and 'filteredProducts' to stop firing page reset on ShopPage 
+  when 'Add to cart' button is clicked on a product */
+  
+  const allProducts = useMemo(
+    () => Object.values(jewelryCollections).flat(),
+    []
+  );
 
   // FILTER PRODUCTS
-  const filteredProducts = allProducts.filter((product) => {
+  const filteredProducts = useMemo(
+    () =>
+      allProducts.filter((product) => {
+        const categoryMatch =
+          filters.categories.length === 0 ||
+          filters.categories.includes(product.category);
 
-    // CATEGORY
-    const categoryMatch =
-      filters.categories.length === 0 ||
-      filters.categories.includes(product.category);
+        const purityMatch =
+          filters.purity.length === 0 ||
+          filters.purity.includes(product.purity);
 
-    // PURITY
-    const purityMatch =
-      filters.purity.length === 0 ||
-      filters.purity.includes(product.purity);
+        const availabilityMatch =
+          filters.availability.length === 0 ||
+          filters.availability.includes(product.availability);
 
-    // AVAILABILITY
-    const availabilityMatch =
-      filters.availability.length === 0 ||
-      filters.availability.includes(product.availability);
-
-    return (
-      categoryMatch &&
-      purityMatch &&
-      availabilityMatch
-    );
-  });
+        return categoryMatch && purityMatch && availabilityMatch;
+      }),
+    [allProducts, filters]
+  );
 
   // Load cart from localstorage
   useEffect(() => {

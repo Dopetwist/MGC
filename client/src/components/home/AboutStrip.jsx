@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { Award, ShieldCheck, Truck, RefreshCcw, Gem, Zap, Flower } from "lucide-react";
+import { revealBottom } from "../../utils/reveal";
 
 
 function AboutStrip() {
+
+  useEffect(() => {
+    revealBottom(".about-container");
+  }, []);
 
   return (
 

@@ -99,7 +99,7 @@ function CartPage({ cart, setCart }) {
                 {cart.map((product) => (
                   <div key={product.id} className="cart-box">
                     <div className="product-image">
-                        <img src={product.image} width={100} height={100} alt={`${product.name} Image`} />
+                        <img src={product.image} width={100} height={100} alt={`${product.name} Image`} loading="lazy" />
                     </div>
 
                     <div className="product-contents">

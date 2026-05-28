@@ -1,16 +1,24 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { ShieldCheck, Sparkles, Handshake, Star, ArrowRight } from "lucide-react";
+import { revealLeft, revealCards, revealBottom } from "../utils/reveal";
 
 function AboutPage() {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        revealLeft("#large-text");
+        revealCards(".hero-card");
+        revealBottom(".about-values, .about-story, .about-cta");
+    }, []);
 
     return (
 
         <section id="about-page">
             <div className="page-header">
                 <p className="eyebrow">About Misan Gold Collection</p>
-                <h1>Gold buying, selling and custom jewellery with trust at every step.</h1>
+                <h1 id="large-text">Gold buying, selling and custom jewellery with trust at every step.</h1>
                 <p className="page-lead">
                     We help you turn gold into value with clear pricing, expert appraisal and dependable customer service — whether you are selling, buying or creating custom pieces.
                 </p>

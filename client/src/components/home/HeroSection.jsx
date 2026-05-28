@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { revealBottom } from "../../utils/reveal";
 
 function HeroSection() {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+      revealBottom(".gold-image");
+    }, []);
 
     return (
 
@@ -58,11 +64,11 @@ function HeroSection() {
                 <div className="gold-image">
                     <div className="gold-image-box">
                         <figure className="gold-image-figure1">
-                          <img src="/images/hero-mgc.png" alt="Hero Top Image" />
+                          <img src="/images/hero-mgc.png" alt="Hero Top Image" loading="lazy" />
                         </figure>
 
                         <figure className="gold-image-figure2">
-                          <img src="/images/Pendant1.png" alt="Hero Bottom Image" />
+                          <img src="/images/Pendant1.png" alt="Hero Bottom Image" loading="lazy" />
                         </figure>
                     </div>
 

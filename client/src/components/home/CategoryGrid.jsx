@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import { MoveRight } from "lucide-react";
+import { revealLeft } from "../../utils/reveal";
 
 function CategoryGrid() {
+
+  useEffect(() => {
+    revealLeft(".buy-sell");
+  }, []);
 
   const categories = [
     { id: 1, name: "RINGS", image: "/images/category-images/gold-ring.jpg", pieces: 48 },
@@ -42,7 +48,7 @@ function CategoryGrid() {
         {categories.map(category => (
           <div key={category.id} className="category-card">
             <figure>
-              <img src={category.image} alt={`${category.name} Image`} />
+              <img src={category.image} alt={`${category.name} Image`} loading="lazy" />
             </figure>
 
             <div className="category-details">

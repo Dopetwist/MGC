@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+import { revealRight } from "../../utils/reveal";
 
 function TestimonialsSection() {
+
+  useEffect(() => {
+    revealRight(".testimonial-flex");
+  }, []);
 
   return (
 
