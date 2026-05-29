@@ -2562,7 +2562,7 @@ button.place-order:hover {
     }
 
     #hero {
-        padding: 1.5rem 3%;
+        padding: 3rem 3%;
     }
 
     #hero .mgc-box {
@@ -2595,11 +2595,16 @@ button.place-order:hover {
 
     #hero .hero-texts {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 1rem;
     }
 
     .hero-texts h2 {
-        font-size: 1.8rem;
-        margin: 0.5rem 0;
+        font-size: 1.9rem;
+        margin: 1rem 0;
     }
 
     .hero-texts .new-collection-text {
@@ -2611,10 +2616,16 @@ button.place-order:hover {
         max-width: 100%;
         font-size: 0.9rem;
         line-height: 1.4;
+        text-align: center;
     }
 
     .hero-buttons {
         margin: 1.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .hero-buttons button {
@@ -2649,8 +2660,9 @@ button.place-order:hover {
     }
 
     #stats {
-        flex-direction: column;
-        gap: 0.8rem;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
         margin-top: 1.5rem;
         padding-top: 0.8rem;
     }
@@ -2672,8 +2684,8 @@ button.place-order:hover {
     }
 
     #category-grid .buy-sell h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0.8rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     #category-grid .buy-sell p {
@@ -2712,7 +2724,7 @@ button.place-order:hover {
 
     .category-flex .our-collections,
     .featured-pieces {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         letter-spacing: 0.05rem;
     }
 
@@ -2723,7 +2735,7 @@ button.place-order:hover {
 
     .category-container,
     .featured-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
         gap: 1rem;
         margin-top: 1.5rem;
     }
@@ -2788,7 +2800,7 @@ button.place-order:hover {
     }
 
     .about-texts h1 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         margin: 0.8rem 0;
     }
 
@@ -2839,7 +2851,7 @@ button.place-order:hover {
     }
 
     .testimonial-heading {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         margin: 1.5rem 0;
     }
 
@@ -2869,8 +2881,11 @@ button.place-order:hover {
         font-size: 0.7rem;
     }
 
+    #category-grid,
+    #featured-products,
+    #testimonials,
     #footer {
-        padding: 2rem 3%;
+        padding: 3rem 4%;
     }
 
     .footer-container {
@@ -2940,7 +2955,7 @@ button.place-order:hover {
         flex-direction: column;
         border-right: none;
         border-bottom: 0.05rem solid var(--sub-text-color);
-        padding: 1.2rem 0;
+        padding: 1.2rem 1rem;
         gap: 1.2rem;
     }
 
@@ -2991,23 +3006,28 @@ button.place-order:hover {
         font-size: 1rem;
     }
 
+    .product-grid-style {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
     /* Collections Page */
     #collections-page {
         padding: 2rem 3%;
     }
 
     .collections-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         margin-top: 0.8rem;
     }
 
     .collection-item {
         padding: 0.8rem;
-        margin: 2rem 0;
+        margin: 3rem 0;
     }
 
     .collection-item h3 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-bottom: 0.4rem;
     }
 
@@ -3124,7 +3144,7 @@ button.place-order:hover {
     }
 
     .contact-layout {
-        gap: 1.2rem;
+        gap: 4rem;
         margin-bottom: 2rem;
     }
 
@@ -3186,15 +3206,19 @@ button.place-order:hover {
     }
 
     .cart-items-buttons {
-        flex-direction: column;
-        gap: 0.8rem;
         margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
     }
 
     .cart-items-buttons button {
-        width: 100%;
-        padding: 0.4rem;
+        width: 50%;
         font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .cart-header h1 {
@@ -3208,15 +3232,14 @@ button.place-order:hover {
     .cart-box {
         padding: 0.8rem;
         margin: 0.8rem 0;
+        gap: 1rem;
     }
 
     .cart-box .product-contents {
-        flex-direction: column;
         gap: 0.5rem;
     }
 
     .cart-icons-box {
-        flex-direction: column;
         gap: 1rem;
         padding: 1.5rem;
         margin-top: 0.8rem;
@@ -3235,6 +3258,7 @@ button.place-order:hover {
     }
 
     #quantity-box .quantity-btns {
+        justify-content: flex-start;
         gap: 0.1rem;
     }
 
@@ -3244,7 +3268,7 @@ button.place-order:hover {
     }
 
     .product-quantity {
-        margin: 0 0.3rem;
+        margin: 0 0.5rem;
     }
 
     .remove-item {
@@ -3930,7 +3954,7 @@ button.place-order:hover {
         flex-direction: column;
         border-right: none;
         border-bottom: 0.05rem solid var(--sub-text-color);
-        padding: 1rem 0;
+        padding: 1rem 0.5rem;
         gap: 1rem;
     }
 
