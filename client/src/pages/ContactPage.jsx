@@ -28,17 +28,17 @@ function ContactPage() {
                     <div className="contact-card">
                         <MapPin size={26} className="contact-icon" />
                         <h3>Store location</h3>
-                        <p>123 Jewelry Street, Delta, Nigeria</p>
+                        <p>Warri, Delta State, Nigeria.</p>
                     </div>
                     <div className="contact-card">
                         <Mail size={26} className="contact-icon" />
                         <h3>Email</h3>
-                        <p><a href="mailto:info@misangoldcollection.com">info@misangoldcollection.com</a></p>
+                        <p><a href="mailto:misandouglas@gmail.com">misandouglas@gmail.com</a></p>
                     </div>
                     <div className="contact-card">
                         <Phone size={26} className="contact-icon" />
                         <h3>Phone</h3>
-                        <p><a href="tel:+2341234567890">+234 123 456 7890</a></p>
+                        <p><a href="tel:+2349055789610">+234 905 578 9610</a></p>
                     </div>
                     <div className="contact-card">
                         <Clock size={26} className="contact-icon" />

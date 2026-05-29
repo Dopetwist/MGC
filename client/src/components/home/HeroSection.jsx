@@ -28,7 +28,7 @@ function HeroSection() {
                     </div>
 
                     <h2>Wear the <br /> <span>Timeless</span> <br /> in Gold</h2>
-                    <p className="hero-sub-text">Experience the epitome of luxury with our exquisite range of 18K and 24K gold jewelries. Each piece is crafted to perfection and quality. Indulge in the brilliance of Misan Gold and elevate your jewelry game to new heights.</p>
+                    <p className="hero-sub-text">Experience the epitome of luxury with our exquisite range of 18K and 22K gold jewelries. Each piece is crafted to perfection and quality. Indulge in the brilliance of Misan Gold and elevate your jewelry game to new heights.</p>
 
                     <div className="hero-buttons">
                         <button 
