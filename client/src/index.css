@@ -1376,7 +1376,7 @@ section#hero {
     border-radius: 0.5rem;
     overflow: hidden;
     padding: 1rem;
-    margin: 3rem 0;
+    margin: 3rem 0 5rem;
     transition: transform 0.3s ease;
 }
 
@@ -2238,6 +2238,14 @@ button.place-order:hover {
         width: 280px;
     }
 
+    #sidebar {
+        padding: 2rem 1rem;
+    }
+
+    .product-grid-style {
+        gap: 1rem;
+    }
+
     .testimonial-flex {
         gap: 1.5rem;
     }
@@ -3000,7 +3008,6 @@ button.place-order:hover {
 
     .collection-item {
         padding: 0.8rem;
-        margin: 3rem 0;
     }
 
     .collection-item h3 {
@@ -4026,7 +4033,6 @@ button.place-order:hover {
 
     .collection-item {
         padding: 0.6rem;
-        margin: 3rem 0;
     }
 
     .collection-item h3 {
@@ -4147,7 +4153,7 @@ button.place-order:hover {
     }
 
     .contact-layout {
-        gap: 2rem;
+        gap: 4rem;
         margin-bottom: 1.5rem;
     }
 
