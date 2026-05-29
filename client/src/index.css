@@ -2252,14 +2252,10 @@ button.place-order:hover {
 
     header {
         padding: 1rem 4%;
-        flex-direction: column;
-        gap: 1rem;
     }
 
     #navbar {
-        flex-wrap: wrap;
         gap: 1rem;
-        justify-content: center;
     }
 
     #navbar .link {
@@ -2267,9 +2263,7 @@ button.place-order:hover {
     }
 
     #nav-right {
-        width: 100%;
         justify-content: center;
-        gap: 1rem;
     }
 
     #logo figure img {
@@ -2332,11 +2326,6 @@ button.place-order:hover {
         font-size: 0.8rem;
     }
 
-    #stats {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
     #category-grid,
     #featured-products {
         padding: 3rem 4%;
@@ -2388,6 +2377,7 @@ button.place-order:hover {
 
     .contact-layout {
         grid-template-columns: 1fr;
+        gap: 4rem;
     }
 
     .about-container {
@@ -2403,11 +2393,6 @@ button.place-order:hover {
         font-size: 1.8rem;
     }
 
-    .about-inner-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
     .about-images {
         width: 100%;
     }
@@ -2421,22 +2406,14 @@ button.place-order:hover {
         font-size: 1.8rem;
     }
 
-    .footer-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 1.5rem;
+    .product-grid-style {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        gap: 1rem;
     }
 
     #sidebar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        border-right: none;
         border-bottom: 0.05rem solid var(--sub-text-color);
-        padding: 1.5rem 2rem;
+        padding: 1rem;
     }
 
     .sidebar-contents {
