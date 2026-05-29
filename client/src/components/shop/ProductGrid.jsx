@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
  * - onAddToCart: callback(product) when Add to Cart is clicked
  */
 
-const ProductGrid = ({ products, columns, cart, addToCart, handleToast }) => {
+const ProductGrid = ({ products, cart, addToCart, handleToast }) => {
 
   const location = useLocation();
 
@@ -19,46 +19,17 @@ const ProductGrid = ({ products, columns, cart, addToCart, handleToast }) => {
       return cart.some(item => item.id === id);
   }
 
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-    gap: '16px',
-  }
-
-  const cardStyle = {
-    border: '1px solid #e6e6e6',
-    borderRadius: 8,
-    padding: 12,
-    background: '#fff',
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-  }
-
-  const imgStyle = {
-    width: '100%',
-    height: 200,
-    objectFit: 'contain',
-    borderRadius: 6,
-    marginBottom: 8,
-  }
-
-  const titleStyle = { fontFamily: 'var(--poppins)', fontSize: 16, fontWeight: 600, marginBottom: 6 }
-  const descStyle = { fontFamily: 'var(--inter)', fontSize: 13, color: '#555', marginBottom: 'auto' }
-  const footerStyle = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 12 }
-  const priceStyle = { fontWeight: 700 }
-
   if (!Array.isArray(products) || products.length === 0) {
     return <div className="no-products">No products found.</div>
   }
 
   return (
-    <div style={gridStyle}>
+    <div className='product-grid-style'>
       {products.map((p) => (
-        <article key={p.id} style={cardStyle} aria-label={`product-${p.id}`}>
-          {p.image && <img src={p.image} alt={p.name || 'product image'} style={imgStyle} loading="lazy" />}
-          <div style={titleStyle}>{p.name}</div>
-          {p.description && <div style={descStyle}>{truncate(p.description, 120)}</div>}
+        <article key={p.id} className='product-card-style' aria-label={`product-${p.id}`}>
+          {p.image && <img src={p.image} alt={p.name || 'product image'} className='product-image-style' loading="lazy" />}
+          <div className='title-style'>{p.name}</div>
+          {p.description && <div className='desc-style'>{truncate(p.description, 120)}</div>}
 
           {location.pathname === "/shop" && p.purity && (
             <p className="purity">{p.purity}</p>
@@ -76,8 +47,8 @@ const ProductGrid = ({ products, columns, cart, addToCart, handleToast }) => {
             </div>
           )}
 
-          <div style={footerStyle}>
-            <div style={priceStyle}>{formatPrice(p.price)}</div>
+          <div className='footer-style'>
+            <div className='price-style'>{formatPrice(p.price)}</div>
             <button
               type="button"
               id="product-btn"

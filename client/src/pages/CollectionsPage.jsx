@@ -36,8 +36,7 @@ function CollectionsPage({ cart, addToCart }) {
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
-            products={jewelryCollections.necklaces} 
-            columns={4} 
+            products={jewelryCollections.necklaces}
             />
         </div>
 
@@ -50,8 +49,7 @@ function CollectionsPage({ cart, addToCart }) {
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
-            products={jewelryCollections.earrings} 
-            columns={4} 
+            products={jewelryCollections.earrings}
           />
         </div>
 
@@ -64,8 +62,7 @@ function CollectionsPage({ cart, addToCart }) {
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
-            products={jewelryCollections.bracelets} 
-            columns={4} 
+            products={jewelryCollections.bracelets}
           />
         </div>
       </div>
@@ -79,8 +76,7 @@ function CollectionsPage({ cart, addToCart }) {
           cart={cart}
           addToCart={addToCart}
           handleToast={handleToast}
-          products={jewelryCollections.rings} 
-          columns={4} 
+          products={jewelryCollections.rings}
         />
       </div>
 
