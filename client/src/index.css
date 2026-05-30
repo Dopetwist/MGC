@@ -895,6 +895,55 @@ section#hero {
     color: var(--deep-gold);
 }
 
+#chat-container {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+#chat-btn {
+    font-family: var(--inter);
+    font-size: 1rem;
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    background-color: #008000;
+    box-shadow: 0 0 0.8rem #008000;
+    border: 0.05rem solid var(--text-color);
+    border-radius: 3rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    /* animation trigger */
+    opacity: 0;
+    transform: translateY(1rem);
+    animation: fadeSlideUp 0.6s ease forwards,
+                float 2s ease-in-out infinite;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+#chat-btn:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+
 #about-strip {
     background: #131313;
     padding: 5rem 5%;

@@ -6,6 +6,7 @@ import FeaturedProducts from '../components/home/FeaturedProducts';
 import AboutStrip from '../components/home/AboutStrip';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import Footer from '../components/layout/Footer';
+import Chat from '../components/animation/Chat';
 
 
 function HomePage({ cart, addToCart }) {
@@ -21,6 +22,7 @@ function HomePage({ cart, addToCart }) {
         <AboutStrip />
         <TestimonialsSection />
         <Footer />
+        <Chat />
     </div>
   )
 }
