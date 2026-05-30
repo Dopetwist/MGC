@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { revealCards } from "../../utils/reveal";
 
 
-function FeaturedProducts() {
+function FeaturedProducts({ cart, addToCart }) {
 
   useEffect(() => {
     revealCards(".featured-card");
@@ -14,7 +14,7 @@ function FeaturedProducts() {
     {
       id: 1,
       name: "Stylish Money Bag Pendant Necklace",
-      image: "/images/necklaces/N10.PNG",
+      image: "/images/necklaces/N11.PNG",
       karat: "22K",
       style: "Yellow Gold",
       fit: "Adjustable",
@@ -59,6 +59,11 @@ function FeaturedProducts() {
     return String(value)
   }
 
+  // Function to check if product is already in cart
+  const isInCart = (id) => {
+      return cart.some(item => item.id === id);
+  }
+
   return (
 
     <section id="featured-products">
@@ -94,9 +99,12 @@ function FeaturedProducts() {
 
                   <button 
                   id="featured-add-btn"
-                  className="cart-btn"
+                  className={`cart-btn ${isInCart(piece.id) ? "added" : ""}`}
+                  onClick={() => 
+                    addToCart && addToCart(piece)
+                  }
                   >
-                    +
+                    {isInCart(piece.id) ? "✔ In Cart" : "+"}
                   </button>
                 </div>
               </div>

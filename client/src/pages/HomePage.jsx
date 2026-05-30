@@ -8,7 +8,7 @@ import TestimonialsSection from '../components/home/TestimonialsSection';
 import Footer from '../components/layout/Footer';
 
 
-function HomePage({ cart }) {
+function HomePage({ cart, addToCart }) {
     
   return (
 
@@ -17,11 +17,10 @@ function HomePage({ cart }) {
         <MarqueeBar />
         <HeroSection />
         <CategoryGrid />
-        <FeaturedProducts />
+        <FeaturedProducts cart={cart} addToCart={addToCart} />
         <AboutStrip />
         <TestimonialsSection />
         <Footer />
-
     </div>
   )
 }
