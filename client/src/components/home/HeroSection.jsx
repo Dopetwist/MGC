@@ -13,14 +13,6 @@ function HeroSection() {
     return (
 
         <section id="hero">
-            {/* <div className="mgc-box">
-                <figure>
-                  <img src="/images/MGC-logo.png" alt="Misan Gold Collection Logo" />
-                </figure>
-
-                <h1>Misan <span>Gold</span> Collection</h1>
-            </div> */}
-
             <div className="hero-box">
                 <div className="hero-texts">
                     <div className="new-collection-container">
