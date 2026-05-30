@@ -4,11 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { revealCards } from "../../utils/reveal";
 
 
-function FeaturedProducts({ cart, addToCart }) {
-
-  useEffect(() => {
-    revealCards(".featured-card");
-  }, []);
+function FeaturedProducts({ cart, addToCart, setToast }) {
 
   const featuredPieces = [
     {
@@ -61,6 +57,17 @@ function FeaturedProducts({ cart, addToCart }) {
     }
   ];
 
+  useEffect(() => {
+    revealCards(".featured-card");
+  }, []);
+
+  const handleToast = () => {
+      setToast({
+          message: "✔ Cart updated successfully!",
+          type: "success"
+      })
+  }
+
   // Simple price formatter for USD.
   function formatPrice(value) {
     if (value == null) return ''
@@ -111,9 +118,10 @@ function FeaturedProducts({ cart, addToCart }) {
                   <button 
                   id="featured-add-btn"
                   className={`cart-btn ${isInCart(piece.id) ? "added" : ""}`}
-                  onClick={() => 
-                    addToCart && addToCart(piece)
-                  }
+                  onClick={() => {
+                    addToCart && addToCart(piece);
+                    handleToast();
+                  }}
                   >
                     {isInCart(piece.id) ? "✔ In Cart" : "+"}
                   </button>

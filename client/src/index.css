@@ -872,7 +872,8 @@ section#hero {
     font-size: 0.9rem;
 }
 
-#product-btn.added {
+#product-btn.added,
+#featured-add-btn.added {
     background: #555;
 }
 
