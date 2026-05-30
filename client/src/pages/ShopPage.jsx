@@ -85,8 +85,7 @@ function ShopPage({ filteredProducts, cart, addToCart }) {
             cart={cart} 
             addToCart={addToCart} 
             handleToast={handleToast}
-            products={currentProducts} 
-            columns={4} 
+            products={currentProducts}
             />
         </div>
 

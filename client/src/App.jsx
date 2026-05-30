@@ -87,7 +87,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage cart={cart} />} />
+      <Route path="/" element={<HomePage cart={cart} addToCart={addToCart} />} />
 
       <Route element={<Layout cart={cart} filters={filters} setFilters={setFilters} />}>
         <Route path="/collections" element={<CollectionsPage cart={cart} addToCart={addToCart} />} />

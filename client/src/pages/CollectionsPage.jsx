@@ -27,20 +27,6 @@ function CollectionsPage({ cart, addToCart }) {
       <div className="collections-container">
         <h2 className="collections-title">Our Collections</h2><div className="hero-line"></div>
 
-        <div className="rings-container collection-item">
-          <div className="collection-header">
-            <h3>Rings</h3>
-            <div className="hero-line"></div>
-          </div>
-          <ProductGrid 
-            cart={cart}
-            addToCart={addToCart}
-            handleToast={handleToast}
-            products={jewelryCollections.rings} 
-            columns={4} 
-          />
-        </div>
-
         <div className="necklaces-container collection-item">
           <div className="collection-header">
             <h3>Necklaces</h3>
@@ -50,23 +36,8 @@ function CollectionsPage({ cart, addToCart }) {
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
-            products={jewelryCollections.necklaces} 
-            columns={4} 
+            products={jewelryCollections.necklaces}
             />
-        </div>
-
-        <div className="bracelets-container collection-item">
-          <div className="collection-header">
-            <h3>Bracelets</h3>
-            <div className="hero-line"></div>
-          </div>
-          <ProductGrid 
-            cart={cart}
-            addToCart={addToCart}
-            handleToast={handleToast}
-            products={jewelryCollections.bracelets} 
-            columns={4} 
-          />
         </div>
 
         <div className="earrings-container collection-item">
@@ -78,10 +49,35 @@ function CollectionsPage({ cart, addToCart }) {
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
-            products={jewelryCollections.earrings} 
-            columns={4} 
+            products={jewelryCollections.earrings}
           />
         </div>
+
+        <div className="bracelets-container collection-item">
+          <div className="collection-header">
+            <h3>Bracelets</h3>
+            <div className="hero-line"></div>
+          </div>
+          <ProductGrid 
+            cart={cart}
+            addToCart={addToCart}
+            handleToast={handleToast}
+            products={jewelryCollections.bracelets}
+          />
+        </div>
+      </div>
+
+      <div className="rings-container collection-item">
+        <div className="collection-header">
+          <h3>Rings</h3>
+          <div className="hero-line"></div>
+        </div>
+        <ProductGrid 
+          cart={cart}
+          addToCart={addToCart}
+          handleToast={handleToast}
+          products={jewelryCollections.rings}
+        />
       </div>
 
       {/* Render Toast */}

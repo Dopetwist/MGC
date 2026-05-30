@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { revealCards } from "../../utils/reveal";
 
 
-function FeaturedProducts() {
+function FeaturedProducts({ cart, addToCart }) {
 
   useEffect(() => {
     revealCards(".featured-card");
@@ -13,18 +13,18 @@ function FeaturedProducts() {
   const featuredPieces = [
     {
       id: 1,
-      name: "Stylish Gold Bracelet",
-      image: "/images/featured-products/stylish-gold-bracelet.png",
-      karat: "18K",
-      style: "Rose Gold",
+      name: "Stylish Money Bag Pendant Necklace",
+      image: "/images/necklaces/N11.PNG",
+      karat: "22K",
+      style: "Yellow Gold",
       fit: "Adjustable",
       firstPrice: 149.99,
       discountPrice: 129.99
     },
     {
       id: 2,
-      name: "Elegant Gold Earrings",
-      image: "/images/featured-products/elegant-gold-earring.png",
+      name: "Top Tier Gold Bar",
+      image: "/images/GB1.PNG",
       karat: "24K",
       style: "Yellow Gold",
       firstPrice: 179.99,
@@ -32,18 +32,17 @@ function FeaturedProducts() {
     },
     {
       id: 3,
-      name: "Luxurious Gold Necklace",
-      image: "/images/featured-products/luxurious-gold-necklace.jpg",
-      karat: "24K",
-      inchesRange: [18, 20],
+      name: "Customized Gold Pendant",
+      image: "/images/necklaces/N4.PNG",
+      karat: "22K",
       style: "Gold Plated",
       firstPrice: 299.99
     },
     {
       id: 4,
-      name: "Elegant Gold Ring",
-      image: "/images/featured-products/elegant-gold-ring.png",
-      karat: "18K",
+      name: "Cuban Link Bracelet",
+      image: "/images/bracelets/B1.PNG",
+      karat: "22K",
       sizeRange: [6, 10],
       style: "Yellow Gold",
       firstPrice: 199.99,
@@ -58,6 +57,11 @@ function FeaturedProducts() {
       return value.toLocaleString(undefined, { style: 'currency', currency: 'USD' })
     }
     return String(value)
+  }
+
+  // Function to check if product is already in cart
+  const isInCart = (id) => {
+      return cart.some(item => item.id === id);
   }
 
   return (
@@ -95,9 +99,12 @@ function FeaturedProducts() {
 
                   <button 
                   id="featured-add-btn"
-                  className="cart-btn"
+                  className={`cart-btn ${isInCart(piece.id) ? "added" : ""}`}
+                  onClick={() => 
+                    addToCart && addToCart(piece)
+                  }
                   >
-                    +
+                    {isInCart(piece.id) ? "✔ In Cart" : "+"}
                   </button>
                 </div>
               </div>

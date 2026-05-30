@@ -14,15 +14,15 @@ function Footer() {
 
           <div className="footer-contact-details">
             <p className="footer-contact-us">Contact Us:</p>
-            <p><MapPin size={24} className='footer-icon' /> 123 Jewelry Street, Delta, Nigeria</p>
-            <p><Mail size={24} className='footer-icon' /> info@misangoldcollection.com</p>
-            <p><Phone size={24} className='footer-icon' /> +234 123 456 7890</p>
+            <p><MapPin size={24} className='footer-icon' /> Warri, Delta State, Nigeria.</p>
+            <p><Mail size={24} className='footer-icon' /> misandouglas@gmail.com</p>
+            <p><Phone size={24} className='footer-icon' /> +234 905 578 9610</p>
 
             <p className="follow">Follow us on:</p>
             <div className="social-icons">
-              <SocialIcon url="https://www.instagram.com/misangoldcollection" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Instagram" target="_blank" />
+              <SocialIcon url="https://www.instagram.com/misan_gold_collection?igsh=MXY3OWxvbjVjbmVsZg==" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Instagram" target="_blank" />
+              <SocialIcon url="https://www.tiktok.com/@misangoldcollection?_r=1&_t=ZS-96lXkg7bi1H" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our TikTok" target="_blank" />
               <SocialIcon url="https://www.facebook.com/misangoldcollection" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Facebook" target="_blank" />
-              <SocialIcon url="https://www.twitter.com/misangoldcollec" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Twitter" target="_blank" />
             </div>
           </div>
         </div>
