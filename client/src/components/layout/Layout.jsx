@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import FilterSidebar from "../shop/FilterSidebar";
+import Chat from "../animation/Chat";
 
 function Layout({ cart, filters, setFilters, allProducts }) {
 
@@ -18,6 +19,7 @@ function Layout({ cart, filters, setFilters, allProducts }) {
 
           <main style={{ flex: 1 }}>
             <Outlet />
+            <Chat />
           </main>
         </div>
 

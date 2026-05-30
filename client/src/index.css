@@ -135,36 +135,6 @@ section#hero {
     padding: 3rem 5%;
 }
 
-#hero .mgc-box {
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-#hero .mgc-box figure {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-#hero .mgc-box img {
-    width: 8rem;
-    color: var(--text-color);
-}
-
-#hero .mgc-box h1 {
-    width: fit-content;
-    font-family: var(--poppins);
-    font-weight: 500;
-    color: var(--text-color);
-    box-shadow: 0 0 0.7rem var(--box-shadow-color);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    text-transform: uppercase;
-}
-
 .hero-line {
     width: 6rem;
     height: 0.2rem;
@@ -203,8 +173,7 @@ section#hero {
    margin: 1rem 0;
 }
 
-.hero-texts h2 span,
-.mgc-box h1 span {
+.hero-texts h2 span {
    color: var(--gold);
 }
 
@@ -787,10 +756,12 @@ section#hero {
 }
 
 .featured-card .featured-details {
+    height: 100%;
     padding: 1rem;
     border-top: 0.05rem solid var(--sub-text-color);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.5rem;
 }
 
@@ -922,6 +893,55 @@ section#hero {
 
 .shopping-cart {
     color: var(--deep-gold);
+}
+
+#chat-container {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+#chat-btn {
+    font-family: var(--inter);
+    font-size: 1rem;
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    background-color: #008000;
+    box-shadow: 0 0 0.8rem #008000;
+    border: 0.05rem solid var(--text-color);
+    border-radius: 3rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    /* animation trigger */
+    opacity: 0;
+    transform: translateY(1rem);
+    animation: fadeSlideUp 0.6s ease forwards,
+                float 2s ease-in-out infinite;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+#chat-btn:hover {
+    cursor: pointer;
+    box-shadow: none;
 }
 
 #about-strip {
@@ -2313,14 +2333,6 @@ button.place-order:hover {
         width: 180px;
     }
 
-    #hero .mgc-box img {
-        width: 6rem;
-    }
-
-    #hero .mgc-box h1 {
-        font-size: 1.5rem;
-    }
-
     .hero-texts h2 {
         font-size: 2.5rem;
     }
@@ -2548,24 +2560,6 @@ button.place-order:hover {
 
     #hero {
         padding: 3rem 3%;
-    }
-
-    #hero .mgc-box {
-        padding: 0.5rem 0;
-    }
-
-    #hero .mgc-box figure {
-        gap: 0.3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    #hero .mgc-box img {
-        width: 5rem;
-    }
-
-    #hero .mgc-box h1 {
-        font-size: 1.2rem;
-        padding: 0.4rem;
     }
 
     .hero-line {
@@ -3564,24 +3558,6 @@ button.place-order:hover {
 
     #hero {
         padding: 2rem 2%;
-    }
-
-    #hero .mgc-box {
-        padding: 0.3rem 0;
-    }
-
-    #hero .mgc-box figure {
-        gap: 0.2rem;
-        margin-bottom: 0.3rem;
-    }
-
-    #hero .mgc-box img {
-        width: 4rem;
-    }
-
-    #hero .mgc-box h1 {
-        font-size: 1rem;
-        padding: 0.3rem;
     }
 
     .hero-line {
