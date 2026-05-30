@@ -905,7 +905,7 @@ section#hero {
     font-family: var(--inter);
     font-size: 1rem;
     color: var(--text-color);
-    padding: 0.8rem 1rem;
+    padding: 0.5rem 0.8rem;
     background-color: #008000;
     box-shadow: 0 0 0.8rem #008000;
     border: 0.05rem solid var(--text-color);
@@ -3290,6 +3290,14 @@ button.place-order:hover {
         font-size: 0.8rem;
     }
 
+    #chat-btn {
+        padding: 0.6rem;
+    }
+
+    #chat-btn span {
+        display: none;
+    }
+
     /* Checkout Page */
     #checkout-page {
         padding: 1.5rem 3%;
@@ -3746,6 +3754,19 @@ button.place-order:hover {
     .cart-btn {
         padding: 0.3rem;
         font-size: 0.9rem;
+    }
+
+    #chat-container {
+        bottom: 2rem;
+        right: 1.5rem;
+    }
+
+    #chat-btn {
+        padding: 0.6rem;
+    }
+
+    #chat-btn span {
+        display: none;
     }
 
     #about-strip {
