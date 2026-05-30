@@ -787,10 +787,12 @@ section#hero {
 }
 
 .featured-card .featured-details {
+    height: 100%;
     padding: 1rem;
     border-top: 0.05rem solid var(--sub-text-color);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.5rem;
 }
 

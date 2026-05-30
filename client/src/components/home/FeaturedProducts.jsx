@@ -12,41 +12,52 @@ function FeaturedProducts({ cart, addToCart }) {
 
   const featuredPieces = [
     {
-      id: 1,
+      id: "NEC011",
       name: "Stylish Money Bag Pendant Necklace",
-      image: "/images/necklaces/N11.PNG",
-      karat: "22K",
-      style: "Yellow Gold",
+      description: "Luxury money bag pendant necklace designed for bold styling.",
+      image: "/images/necklaces/N11.png",
+      purity: "22K Gold",
+      category: "Necklaces",
+      availability: "In Stock",
       fit: "Adjustable",
-      firstPrice: 149.99,
-      discountPrice: 129.99
+      price: 1410,
+      discountPrice: 1325
     },
     {
-      id: 2,
+      id: "GB001",
       name: "Top Tier Gold Bar",
+      description: "Quality 24K Gold Bar for great investment.",
       image: "/images/GB1.PNG",
-      karat: "24K",
+      purity: "24K",
+      category: "Necklaces",
+      availability: "In Stock",
       style: "Yellow Gold",
-      firstPrice: 179.99,
-      discountPrice: 159.99
+      price: 2400,
+      discountPrice: 2180
     },
     {
-      id: 3,
+      id: "NEC004",
       name: "Customized Gold Pendant",
-      image: "/images/necklaces/N4.PNG",
-      karat: "22K",
+      description: "Sleek custom gold pendant. Luxury in fashion.",
+      image: "/images/necklaces/N4.png",
+      category: "Necklaces",
+      availability: "In Stock",
+      purity: "22K",
       style: "Gold Plated",
-      firstPrice: 299.99
+      price: 1940
     },
     {
-      id: 4,
+      id: "BRC001",
       name: "Cuban Link Bracelet",
-      image: "/images/bracelets/B1.PNG",
-      karat: "22K",
+      description: "Luxury Cuban link gold bracelet with polished shine.",
+      image: "/images/bracelets/B1.png",
+      purity: "22K",
+      category: "Bracelets",
+      availability: "In Stock",
       sizeRange: [6, 10],
       style: "Yellow Gold",
-      firstPrice: 199.99,
-      discountPrice: 149.99
+      price: 1530,
+      discountPrice: 1480
     }
   ];
 
@@ -87,11 +98,11 @@ function FeaturedProducts({ cart, addToCart }) {
               <div className="featured-details">
                 <h3>{piece.name}</h3>
                 <p className="karat-text">
-                  {`${piece.karat} ${piece.style} ${piece.sizeRange ? `SIZE ${piece.sizeRange[0]}-${piece.sizeRange[1]}` : ''} ${piece.inchesRange ? `${piece.inchesRange[0]}-${piece.inchesRange[1]} inches` : ''} ${piece.fit || ''}`}
+                  {`${piece.purity} ${piece.style || ''} ${piece.sizeRange ? `SIZE ${piece.sizeRange[0]}-${piece.sizeRange[1]}` : ''} ${piece.inchesRange ? `${piece.inchesRange[0]}-${piece.inchesRange[1]} inches` : ''} ${piece.fit || ''}`}
                 </p>
                 <div className="price-aspect">
                   <div className="price-box">
-                    <p className="first-price">{formatPrice(piece.firstPrice)}</p>
+                    <p className="first-price">{formatPrice(piece.price)}</p>
                     {piece.discountPrice && (
                       <p className="discount-price">{formatPrice(piece.discountPrice)}</p>
                     )}
