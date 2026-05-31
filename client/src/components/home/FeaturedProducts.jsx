@@ -16,8 +16,8 @@ function FeaturedProducts({ cart, addToCart, setToast }) {
       category: "Necklaces",
       availability: "In Stock",
       fit: "Adjustable",
-      price: 1410,
-      discountPrice: 1325
+      price: 1325,
+      discountPrice: 1410
     },
     {
       id: "GB001",
@@ -28,8 +28,8 @@ function FeaturedProducts({ cart, addToCart, setToast }) {
       category: "Necklaces",
       availability: "In Stock",
       style: "Yellow Gold",
-      price: 2400,
-      discountPrice: 2180
+      price: 2180,
+      discountPrice: 2400
     },
     {
       id: "NEC004",
@@ -52,8 +52,8 @@ function FeaturedProducts({ cart, addToCart, setToast }) {
       availability: "In Stock",
       sizeRange: [6, 10],
       style: "Yellow Gold",
-      price: 1530,
-      discountPrice: 1480
+      price: 1480,
+      discountPrice: 1530
     }
   ];
 

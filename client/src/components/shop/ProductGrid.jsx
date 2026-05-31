@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import PropTypes from 'prop-types';
 
 /**
@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 const ProductGrid = ({ products, cart, addToCart, handleToast }) => {
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Function to check if product is already in cart
   const isInCart = (id) => {
@@ -26,7 +27,7 @@ const ProductGrid = ({ products, cart, addToCart, handleToast }) => {
   return (
     <div className='product-grid-style'>
       {products.map((p) => (
-        <article key={p.id} className='product-card-style' aria-label={`product-${p.id}`}>
+        <article key={p.id} className='product-card-style' aria-label={`product-${p.id}`} onClick={() => navigate(`/product/${p.id}`)}>
           {p.image && <img src={p.image} alt={p.name || 'product image'} className='product-image-style' loading="lazy" />}
           <div className='title-style'>{p.name}</div>
           {p.description && <div className='desc-style'>{truncate(p.description, 120)}</div>}

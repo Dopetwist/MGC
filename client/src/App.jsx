@@ -10,6 +10,7 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import jewelryCollections from "./data/products";
+import ProductDetailPage from './pages/ProductDetailPage';
 
 function App() {
 
@@ -92,6 +93,7 @@ function App() {
       <Route element={<Layout cart={cart} filters={filters} setFilters={setFilters} />}>
         <Route path="/collections" element={<CollectionsPage cart={cart} addToCart={addToCart} />} />
         <Route path="/shop" element={<ShopPage cart={cart} addToCart={addToCart} filteredProducts={filteredProducts} />} />
+        <Route path="/product/:id" element={<ProductDetailPage cart={cart} setCart={setCart} addToCart={addToCart} allProducts={allProducts} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
