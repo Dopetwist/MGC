@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 import ProductGrid from "../components/shop/ProductGrid";
 import Toast from '../components/ui/Toast';
 
@@ -8,6 +9,8 @@ function ShopPage({ filteredProducts, cart, addToCart }) {
   const [ sortOption, setSortOption ] = useState("newest");
 
   const [ toast, setToast ] = useState(null);
+
+  const location = useLocation();
 
   const handleToast = () => {
       setToast({
@@ -82,6 +85,7 @@ function ShopPage({ filteredProducts, cart, addToCart }) {
 
         <div className="shop-content">
           <ProductGrid 
+            location={location}
             cart={cart} 
             addToCart={addToCart} 
             handleToast={handleToast}

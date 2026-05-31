@@ -139,10 +139,9 @@ function FilterSidebar({ filters, setFilters }) {
                         In Stock
                     </p>
                 </div>
-
-                <div className="sidebar-btn">
-                    <button onClick={clearFilters}>Clear All</button>
-                </div>
+            </div>
+            <div className="sidebar-btn">
+                <button onClick={clearFilters}>Clear All</button>
             </div>
         </div>
     )

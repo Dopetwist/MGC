@@ -13,8 +13,6 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const path = location.state;
-
   const product = allProducts.find(
     (item) => item.id === id
   );
@@ -28,6 +26,18 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
   if (!product) {
     return <h2>Product not Found!</h2>;
   }
+
+  // `location.state` may be a string (legacy) or an object like { from: '/collections' }.
+  // Provide a safe fallback so the HashLink `to` target is valid.
+  const path =
+    typeof location.state === "string"
+      ? location.state
+      : (location.state && location.state.from) || "/collections";
+
+  // Normalize category to a URL-friendly anchor (lowercase, replace spaces with dashes)
+  const anchor = product.category
+    ? product.category.toLowerCase().replace(/\s+/g, "-")
+    : "";
 
   const handleToast = () => {
       setToast({
@@ -80,7 +90,11 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
       <p className="details-top-path">
         {path === "/collections" ? "collections" : "shop"} 
         <MoveRight size={20} /> 
-        <HashLink to={`${path}#${product.category}`.toLowerCase()} smooth>
+        <HashLink
+          smooth
+          to={`${path}#${anchor}`}
+          scroll={el => el.scrollIntoView({ behavior: "smooth", block: "start" })}
+        >
           {product.category}
         </HashLink> 
         <MoveRight size={20} /> 
