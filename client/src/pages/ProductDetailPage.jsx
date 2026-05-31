@@ -161,7 +161,7 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
               </div>
               <div className="buy-now-btn">
                 <button
-                onClick={() => navigate("/checkout")}
+                onClick={() => navigate("/checkout", { state: { selectedProduct: product } })}
                 >
                   Buy Now
                 </button>
