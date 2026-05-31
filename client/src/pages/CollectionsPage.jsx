@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router";
 import { HashLink } from "react-router-hash-link";
 import { MoveLeft } from "lucide-react";
 import jewelryCollections from "../data/products";
@@ -9,6 +10,8 @@ import Toast from "../components/ui/Toast";
 function CollectionsPage({ cart, addToCart }) {
 
   const [ toast, setToast ] = useState(null);
+
+  const location = useLocation();
 
   const handleToast = () => {
       setToast({
@@ -27,12 +30,13 @@ function CollectionsPage({ cart, addToCart }) {
       <div className="collections-container">
         <h2 className="collections-title">Our Collections</h2><div className="hero-line"></div>
 
-        <div className="necklaces-container collection-item">
+        <div id="necklaces" className="necklaces-container collection-item">
           <div className="collection-header">
             <h3>Necklaces</h3>
             <div className="hero-line"></div>
           </div>
           <ProductGrid 
+            location={location}
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
@@ -40,12 +44,13 @@ function CollectionsPage({ cart, addToCart }) {
             />
         </div>
 
-        <div className="earrings-container collection-item">
+        <div id="earrings" className="earrings-container collection-item">
           <div className="collection-header">
             <h3>Earrings</h3>
             <div className="hero-line"></div>
           </div>
           <ProductGrid 
+            location={location}
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
@@ -53,12 +58,13 @@ function CollectionsPage({ cart, addToCart }) {
           />
         </div>
 
-        <div className="bracelets-container collection-item">
+        <div id="bracelets" className="bracelets-container collection-item">
           <div className="collection-header">
             <h3>Bracelets</h3>
             <div className="hero-line"></div>
           </div>
           <ProductGrid 
+            location={location}
             cart={cart}
             addToCart={addToCart}
             handleToast={handleToast}
@@ -67,12 +73,13 @@ function CollectionsPage({ cart, addToCart }) {
         </div>
       </div>
 
-      <div className="rings-container collection-item">
+      <div id="rings" className="rings-container collection-item">
         <div className="collection-header">
           <h3>Rings</h3>
           <div className="hero-line"></div>
         </div>
         <ProductGrid 
+          location={location}
           cart={cart}
           addToCart={addToCart}
           handleToast={handleToast}

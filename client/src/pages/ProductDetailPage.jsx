@@ -1,15 +1,19 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import { Heart } from "lucide-react";
+import { useNavigate, useLocation, useParams } from "react-router";
+import { Heart, MoveRight } from "lucide-react";
+import { HashLink } from "react-router-hash-link";
 import Toast from "../components/ui/Toast";
 
 function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
 
   const { id } = useParams();
 
+  const [ toast, setToast ] = useState(null);
+
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const [ toast, setToast ] = useState(null);
+  const path = location.state;
 
   const product = allProducts.find(
     (item) => item.id === id
@@ -19,7 +23,7 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
     (item) => item.id === id
   );
 
-  const quantity = cartItem ? cartItem.quantity : 1;
+  const quantity = cartItem ? cartItem.quantity : 0;
 
   if (!product) {
     return <h2>Product not Found!</h2>;
@@ -73,6 +77,15 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
   return (
 
     <section id="product-detail-page">
+      <p className="details-top-path">
+        {path === "/collections" ? "collections" : "shop"} 
+        <MoveRight size={20} /> 
+        <HashLink to={`${path}#${product.category}`.toLowerCase()} smooth>
+          {product.category}
+        </HashLink> 
+        <MoveRight size={20} /> 
+        <span>{product.name}</span>
+      </p>
       <div className="product-details-container">
         <div className="product-detail-image">
           <figure>
@@ -113,7 +126,7 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
                         decreaseQuantity(product.id);
                         handleToast();
                     }}
-                    disabled={quantity === 1} // Disable button if quantity is 1
+                    disabled={quantity === 0} // Disable button if quantity is 0
                     >
                         -
                     </button>
@@ -126,6 +139,7 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
                         increaseQuantity(product.id);
                         handleToast();
                     }}
+                    disabled={!cartItem} // Disable button if product is not in cart
                     >
                         +
                     </button>

@@ -2146,11 +2146,9 @@ button.place-order:hover {
 
 #product-detail-page .product-details-container {
     max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 3rem;
+    display: flex;
     align-items: start;
+    gap: 4rem;
 }
 
 #product-detail-page .product-detail-image figure {
@@ -2271,6 +2269,25 @@ button.place-order:hover {
     cursor: not-allowed;
     opacity: 0.45;
     background: #777;
+}
+
+#product-detail-page .details-top-path {
+    width: fit-content;
+    color: #777;
+    font-family: var(--poppins);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+}
+
+#product-detail-page .details-top-path span {
+    color: var(--deep-gold);
 }
 
 #product-detail-page .product-quantity-btns .body-text {
@@ -2469,10 +2486,10 @@ button.place-order:hover {
         gap: 1.5rem;
     }
 
-    #product-detail-page .product-details-container {
+    /* #product-detail-page .product-details-container {
         grid-template-columns: 1fr 1.05fr;
         gap: 2.5rem;
-    }
+    } */
 
     #product-detail-page .product-detail-image img {
         max-height: 560px;
@@ -2643,10 +2660,10 @@ button.place-order:hover {
         padding: 2.5rem 4%;
     }
 
-    #product-detail-page .product-details-container {
+    /* #product-detail-page .product-details-container {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
+    } */
 
     #product-detail-page .name-price-section h1 {
         font-size: 2.4rem;
@@ -3671,9 +3688,9 @@ button.place-order:hover {
         padding: 2rem 3.5%;
     }
 
-    #product-detail-page .product-details-container {
+    /* #product-detail-page .product-details-container {
         gap: 1.75rem;
-    }
+    } */
 
     #product-detail-page .name-price-section h1 {
         font-size: 2rem;
@@ -4092,6 +4109,10 @@ button.place-order:hover {
     }
 
     #product-detail-page .product-details-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 1.5rem;
     }
 
