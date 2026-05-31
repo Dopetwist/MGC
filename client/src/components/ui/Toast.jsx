@@ -14,7 +14,7 @@ function Toast({ message, type = "success", onClose }) {
     return (
         <div className="toast-container">
             <div className={`toast ${type}`}>
-                <p className="body-text">{message}</p>
+                <p id="toast-text">{message}</p>
             </div>
         </div>
     );

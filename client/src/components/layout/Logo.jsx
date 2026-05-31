@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router";
+
 
 function Logo() {
 
-    return (
+    const navigate = useNavigate();
 
-        <div id="logo">
+    return (
+        <div 
+        id="logo"
+        onClick={() => navigate("/")}
+        >
             <figure>
                 <img src="/images/MGC-logo.png" alt="Misan Gold Collection Logo" />
             </figure>

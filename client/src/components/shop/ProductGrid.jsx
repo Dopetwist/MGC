@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router';
+import { useNavigate } from 'react-router';
 import PropTypes from 'prop-types';
 
 /**
@@ -10,9 +10,9 @@ import PropTypes from 'prop-types';
  * - onAddToCart: callback(product) when Add to Cart is clicked
  */
 
-const ProductGrid = ({ products, cart, addToCart, handleToast }) => {
+const ProductGrid = ({ products, cart, addToCart, handleToast, location }) => {
 
-  const location = useLocation();
+  const navigate = useNavigate();
 
   // Function to check if product is already in cart
   const isInCart = (id) => {
@@ -27,25 +27,34 @@ const ProductGrid = ({ products, cart, addToCart, handleToast }) => {
     <div className='product-grid-style'>
       {products.map((p) => (
         <article key={p.id} className='product-card-style' aria-label={`product-${p.id}`}>
-          {p.image && <img src={p.image} alt={p.name || 'product image'} className='product-image-style' loading="lazy" />}
-          <div className='title-style'>{p.name}</div>
-          {p.description && <div className='desc-style'>{truncate(p.description, 120)}</div>}
+          <div 
+          className="product-card-main"
+          onClick={() => navigate(`/product/${p.id}`, { state: location.pathname })}
+          >
+            <figure>
+              <img className="bg-blur" src={p.image} alt="Backdrop Image" loading="lazy" />
+              {p.image && <img src={p.image} alt={p.name || 'product image'} className='product-image' loading="lazy" />}
+            </figure>
 
-          {location.pathname === "/shop" && p.purity && (
-            <p className="purity">{p.purity}</p>
-          )}
+            <div className='title-style'>{p.name}</div>
+              {p.description && <div className='desc-style'>{truncate(p.description, 120)}</div>}
 
-          {location.pathname === '/collections' && (
-            <div className="rating">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="collection-star">
-                  {i < p.rating ? "★" : "☆"}
-                </span>
-              ))}
-              
-              <p className="reviews">({p.reviews} reviews)</p>
-            </div>
-          )}
+            {location.pathname === "/shop" && p.purity && (
+              <p className="purity">{p.purity}</p>
+            )}
+
+            {location.pathname === '/collections' && (
+              <div className="rating">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="collection-star">
+                    {i < p.rating ? "★" : "☆"}
+                  </span>
+                ))}
+                
+                <p className="reviews">({p.reviews} reviews)</p>
+              </div>
+            )}
+          </div>
 
           <div className='footer-style'>
             <div className='price-style'>{formatPrice(p.price)}</div>

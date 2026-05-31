@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { CreditCard, Landmark, MoveRight } from "lucide-react";
 
 
@@ -8,12 +8,20 @@ function CheckoutPage({ cart, setCart }) {
   const [ type, setType ] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const selectedProduct = location.state?.selectedProduct;
+  const orderItems = selectedProduct
+    ? [{ ...selectedProduct, quantity: selectedProduct.quantity || 1 }]
+    : cart;
 
   const clearCart = () => {
-      setCart([]); // Clear cart from local storage
+    if (!selectedProduct) {
+      setCart([]); // Clear cart from local storage only when checkout is using the cart
+    }
   }
 
-  const total = cart.reduce(
+  const total = orderItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
         0
   );
@@ -173,10 +181,10 @@ function CheckoutPage({ cart, setCart }) {
         </div>
 
         <div className="second-section">
-          <h2 className="your-order">Your Order ({cart.length})</h2>
+          <h2 className="your-order">Your Order ({orderItems.length})</h2>
 
           <div className="order-items">
-            {cart.map((product) => (
+            {orderItems.map((product) => (
               <div key={product.id} className="order-box">
                 <div className="product-image">
                     <img src={product.image} width={50} height={50} alt={product.name} loading="lazy" />
