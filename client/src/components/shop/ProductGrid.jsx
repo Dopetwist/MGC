@@ -37,7 +37,6 @@ const ProductGrid = ({ products, cart, addToCart, handleToast, location }) => {
             </figure>
 
             <div className='title-style'>{p.name}</div>
-              {p.description && <div className='desc-style'>{truncate(p.description, 120)}</div>}
 
             {location.pathname === "/shop" && p.purity && (
               <p className="purity">{p.purity}</p>
@@ -74,12 +73,6 @@ const ProductGrid = ({ products, cart, addToCart, handleToast, location }) => {
       ))}
     </div>
   )
-}
-
-// Helper to truncate long descriptions
-function truncate(text, maxLen) {
-  if (!text) return ''
-  return text.length > maxLen ? text.slice(0, maxLen - 1) + '…' : text
 }
 
 // Simple price formatter for USD.
