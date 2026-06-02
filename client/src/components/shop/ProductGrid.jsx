@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router';
 import PropTypes from 'prop-types';
+import ProductCard from '../ui/ProductCard';
 
 /**
  * ProductGrid
@@ -12,8 +12,6 @@ import PropTypes from 'prop-types';
 
 const ProductGrid = ({ products, cart, addToCart, handleToast, location }) => {
 
-  const navigate = useNavigate();
-
   // Function to check if product is already in cart
   const isInCart = (id) => {
       return cart.some(item => item.id === id);
@@ -25,61 +23,19 @@ const ProductGrid = ({ products, cart, addToCart, handleToast, location }) => {
 
   return (
     <div className='product-grid-style'>
-      {products.map((p) => (
-        <article key={p.id} className='product-card-style' aria-label={`product-${p.id}`}>
-          <div 
-          className="product-card-main"
-          onClick={() => navigate(`/product/${p.id}`, { state: location.pathname })}
-          >
-            <figure>
-              <img className="bg-blur" src={p.image} alt="Backdrop Image" loading="lazy" />
-              {p.image && <img src={p.image} alt={p.name || 'product image'} className='product-image' loading="lazy" />}
-            </figure>
-
-            <div className='title-style'>{p.name}</div>
-              {p.description && <div className='desc-style'>{truncate(p.description, 120)}</div>}
-
-            {location.pathname === "/shop" && p.purity && (
-              <p className="purity">{p.purity}</p>
-            )}
-
-            {location.pathname === '/collections' && (
-              <div className="rating">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="collection-star">
-                    {i < p.rating ? "★" : "☆"}
-                  </span>
-                ))}
-                
-                <p className="reviews">({p.reviews} reviews)</p>
-              </div>
-            )}
-          </div>
-
-          <div className='footer-style'>
-            <div className='price-style'>{formatPrice(p.price)}</div>
-            <button
-              type="button"
-              id="product-btn"
-              className={`cart-btn ${isInCart(p.id) ? "added" : ""}`}
-              onClick={() => {
-                addToCart && addToCart(p);
-                handleToast();
-              }}
-            >
-              {isInCart(p.id) ? "✔ In Cart" : "Add to cart"} 
-            </button>
-          </div>
-        </article>
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          location={location}
+          formatPrice={formatPrice}
+          isInCart={isInCart}
+          addToCart={addToCart}
+          handleToast={handleToast}
+        />
       ))}
     </div>
   )
-}
-
-// Helper to truncate long descriptions
-function truncate(text, maxLen) {
-  if (!text) return ''
-  return text.length > maxLen ? text.slice(0, maxLen - 1) + '…' : text
 }
 
 // Simple price formatter for USD.

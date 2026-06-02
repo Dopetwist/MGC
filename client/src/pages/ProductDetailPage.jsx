@@ -3,6 +3,7 @@ import { useNavigate, useLocation, useParams } from "react-router";
 import { Heart, MoveRight } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 import Toast from "../components/ui/Toast";
+import Rating from "../components/ui/Rating";
 
 function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
 
@@ -110,15 +111,11 @@ function ProductDetailPage({ cart, setCart, addToCart, allProducts }) {
           <div className="name-price-section">
             <h1>{product.name}</h1>
             <p>{product.purity}</p>
-            <div className="rating">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="collection-star">
-                  {i < product.rating ? "★" : "☆"}
-                </span>
-              ))}
-              
-              <span className="reviews">({product.reviews} reviews)</span>
-            </div>
+
+            <Rating
+              product={product} 
+            />
+
             <div className="price-section">
               <p>{formatPrice(product.price)}</p>
             </div>

@@ -1369,12 +1369,13 @@ section#hero {
 }
 
 .sort select {
-    border: 0.1rem solid var(--sub-text-color);
-    border-radius: 0.3rem;
-    background: transparent;
-    padding: 0.3rem;
     font-family: var(--inter);
     font-size: 0.9rem;
+    color: var(--black);
+    background: transparent;
+    border: 0.1rem solid var(--sub-text-color);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
 }
 
 .sort select:hover {
@@ -1434,15 +1435,16 @@ section#hero {
 }
 
 .rating {
+    width: fit-content;
     display: flex;
     align-items: center;
-    gap: 0.05rem;
-    margin-top: 0.5rem;
+    gap: 0.02rem;
+    margin-bottom: 0.75rem;
 }
 
 .reviews {
     font-family: var(--inter);
-    color: var(--black);
+    color: #777;
     font-size: 0.8rem;
     margin-left: 0.5rem;
 }
@@ -1466,7 +1468,6 @@ p.purity {
     font-weight: 500;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    margin-top: 1rem;
 }
 
 .pagination-controls {
@@ -1769,6 +1770,10 @@ button.place-order:hover {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+#state {
+    color: var(--black);
 }
 
 #checkout-page {
@@ -2203,15 +2208,6 @@ button.place-order:hover {
     color: #008000;
 }
 
-#product-detail-page .rating {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 0.1rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.75rem;
-}
-
 #product-detail-page .collection-star {
     color: var(--gold);
     font-size: 1.1rem;
@@ -2220,7 +2216,6 @@ button.place-order:hover {
 
 #product-detail-page .reviews {
     font-size: 0.95rem;
-    color: var(--sub-text-color);
 }
 
 #product-detail-page .price-section p {

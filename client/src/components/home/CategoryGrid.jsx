@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import { MoveRight } from "lucide-react";
 import { revealLeft } from "../../utils/reveal";
+import CategoryCard from "../ui/CategoryCard";
 
 function CategoryGrid() {
 
@@ -46,16 +47,9 @@ function CategoryGrid() {
 
       <div className="category-container">
         {categories.map(category => (
-          <div key={category.id} className="category-card">
-            <figure>
-              <img src={category.image} alt={`${category.name} Image`} loading="lazy" />
-            </figure>
-
-            <div className="category-details">
-              <h3>{category.name}</h3>
-              <p>{category.pieces} Pieces</p>
-            </div>
-          </div>
+            <CategoryCard
+               category={category}
+            />
         ))}
       </div>
     </section>
