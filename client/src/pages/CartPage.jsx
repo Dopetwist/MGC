@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { HashLink } from "react-router-hash-link";
 import Toast from "../components/ui/Toast";
+import CartItem from "../components/cart/CartItem";
+import OrderSummary from "../components/cart/OrderSummary";
 import { 
-  MoveLeft, 
-  MoveRight, 
+  MoveLeft,
   LockKeyhole, 
   Truck, 
   RefreshCcw, 
@@ -89,140 +89,22 @@ function CartPage({ cart, setCart }) {
     <section id="cart-page">
       {total > 0 ? (
         <div className="cart-main">
-          <div className="cart-items">
-              <div className="cart-header">
-                <h1>Your Cart</h1>
-                <p>{`${cart.length} ${cart.length > 1 ? "items" : "item"}`}</p>
-              </div>
+          <CartItem
+            cart={cart}
+            decreaseQuantity={decreaseQuantity}
+            increaseQuantity={increaseQuantity}
+            handleToast={handleToast}
+            formatPrice={formatPrice}
+            removeButtonToast={removeButtonToast}
+            removeFromCart={removeFromCart}
+            clearCart={clearCart}
+          />
 
-              <div className="cart-items-container">
-                {cart.map((product) => (
-                  <div key={product.id} className="cart-box">
-                    <div className="product-image">
-                        <img src={product.image} width={100} height={100} alt={`${product.name} Image`} loading="lazy" />
-                    </div>
-
-                    <div className="product-contents">
-                      <div className="product-name">
-                          <h2 className="heading-text">{product.name}</h2>
-
-                          <p className="cart-product-description">{product.description}</p>
-
-                          <p className="cart-purity-text">{product.purity}</p>
-
-                          <div id="quantity-box">
-                            <div className="quantity-btns">
-                                <button 
-                                id="decrease"
-                                onClick={() => {
-                                    decreaseQuantity(product.id);
-                                    handleToast();
-                                }}
-                                disabled={product.quantity === 1} // Disable button if quantity is 1
-                                >
-                                    -
-                                </button>
-
-                                <p className="body-text product-quantity">{product.quantity}</p>
-
-                                <button 
-                                id="increase"
-                                onClick={() => {
-                                    increaseQuantity(product.id);
-                                    handleToast();
-                                }}
-                                >
-                                    +
-                                </button>
-                            </div>
-                        </div>
-                      </div>
-
-                      <p className="body-text order-price">{formatPrice(product.price * product.quantity)}</p>
-
-                      <p 
-                      className="remove-item" 
-                      onClick={() => {
-                          removeFromCart(product.id);
-                          removeButtonToast();
-                      }}>
-                          Remove Item
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="cart-items-buttons">
-                <button 
-                className="back-to-shop"
-                onClick={() => navigate("/shop")}
-                >
-                  <MoveLeft size={16} />
-                  Continue Shopping
-                </button>
-
-                <button
-                className="clear-cart"
-                onClick={clearCart}
-                >
-                  Clear Cart
-                </button>
-              </div>
-          </div>
-
-          <div className="order-summary">
-              <p className="order-text">Order Summary</p>
-
-              <div className="cart-order-container">
-                <div className="summary-stats">
-                  <div className="subtotal cart-flex">
-                    <p className="order-left-text">Subtotal ({`${cart.length} ${cart.length > 1 ? "items" : "item"}`})</p>
-                    <p className="subtotal-amount">{formatPrice(total)}</p>
-                  </div>
-                  <div className="shipping cart-flex">
-                    <p className="order-left-text">Shipping</p>
-                    <p className="free">Free</p>
-                  </div>
-                </div>
-
-                <div className="total cart-flex">
-                  <p>Total:</p>
-                  <p className="total-amount">{formatPrice(total)}</p>
-                </div>
-
-                <div className="action-buttons">
-                  <button
-                  className="proceed-checkout"
-                  onClick={() => navigate("/checkout")}
-                  >
-                    Proceed to Checkout
-                    <MoveRight size={20} />
-                  </button>
-
-                  <HashLink to={"/shop"} smooth className="continue-shopping">
-                    <MoveLeft size={16} />
-                    continue shopping
-                  </HashLink>
-                </div>
-
-                <div className="cart-icons-box">
-                    <div className="secure">
-                      <span className="cart-icon">🔒</span>
-                      <p>Secured</p>
-                    </div>
-
-                    <div className="insured">
-                      <span className="cart-icon">🚚</span>
-                      <p>Insured</p>
-                    </div>
-                    <div className="reliable">
-                      <span className="cart-icon">↩️</span>
-                      <p>Reliable</p>
-                    </div>
-                </div>
-              </div>
-          </div>
+          <OrderSummary
+            total={total}
+            cart={cart}
+            formatPrice={formatPrice}
+          />
         </div>
       ) : <div className="empty-container">
             <ShoppingCart size={70} className="shopping-cart" />

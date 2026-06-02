@@ -1369,12 +1369,13 @@ section#hero {
 }
 
 .sort select {
-    border: 0.1rem solid var(--sub-text-color);
-    border-radius: 0.3rem;
-    background: transparent;
-    padding: 0.3rem;
     font-family: var(--inter);
     font-size: 0.9rem;
+    color: var(--black);
+    background: transparent;
+    border: 0.1rem solid var(--sub-text-color);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
 }
 
 .sort select:hover {
@@ -1767,6 +1768,10 @@ button.place-order:hover {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+#state {
+    color: var(--black);
 }
 
 #checkout-page {
