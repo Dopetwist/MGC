@@ -62,7 +62,7 @@ function CartItem({
                             +
                         </button>
                     </div>
-                </div>
+                  </div>
               </div>
 
               <p className="body-text order-price">{formatPrice(product.price * product.quantity)}</p>

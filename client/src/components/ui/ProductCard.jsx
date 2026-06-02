@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import Rating from "./Rating";
 
 function ProductCard({ product, location, formatPrice, isInCart, addToCart, handleToast }) {
 
@@ -22,15 +23,9 @@ function ProductCard({ product, location, formatPrice, isInCart, addToCart, hand
             )}
 
             {location.pathname === '/collections' && (
-              <div className="rating">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="collection-star">
-                    {i < product.rating ? "★" : "☆"}
-                  </span>
-                ))}
-                
-                <p className="reviews">({product.reviews} reviews)</p>
-              </div>
+              <Rating
+                product={product}
+              />
             )}
           </div>
 
