@@ -48,7 +48,8 @@ function CategoryGrid() {
       <div className="category-container">
         {categories.map(category => (
             <CategoryCard
-               category={category}
+              key={category.id}
+              category={category}
             />
         ))}
       </div>
