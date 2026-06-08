@@ -9,20 +9,20 @@ function Footer() {
     <footer id="footer">
       <div className="footer-container">
         <div className="footer-main-box">
-          <h2 className="footer-business-name">Misan Gold Collection</h2>
+          <h2 className="footer-business-name">Mylux Gold Collection</h2>
           <p className="footer-description">Premium gold jewellery, crafted with precision and passion. <br /> Proudly Nigerian, globally inspired.</p>
 
           <div className="footer-contact-details">
             <p className="footer-contact-us">Contact Us:</p>
-            <p><MapPin size={24} className='footer-icon' /> Warri, Delta State, Nigeria.</p>
-            <p><Mail size={24} className='footer-icon' /> misandouglas@gmail.com</p>
-            <p><Phone size={24} className='footer-icon' /> +234 905 578 9610</p>
+            <p><MapPin size={24} className='footer-icon' /> 123 Silicon Street, Lagos, Nigeria.</p>
+            <p><Mail size={24} className='footer-icon' /> myluxgoldcollection@gmail.com</p>
+            <p><Phone size={24} className='footer-icon' /> +234 123 456 7890</p>
 
             <p className="follow">Follow us on:</p>
             <div className="social-icons">
-              <SocialIcon url="https://www.instagram.com/misan_gold_collection?igsh=MXY3OWxvbjVjbmVsZg==" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Instagram" target="_blank" />
-              <SocialIcon url="https://www.tiktok.com/@misangoldcollection?_r=1&_t=ZS-96lXkg7bi1H" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our TikTok" target="_blank" />
-              <SocialIcon url="https://www.facebook.com/misangoldcollection" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Facebook" target="_blank" />
+              <SocialIcon url="https://www.instagram.com/myluxgoldcollection" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Instagram" target="_blank" />
+              <SocialIcon url="https://www.tiktok.com/myluxgoldcollection" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our TikTok" target="_blank" />
+              <SocialIcon url="https://www.facebook.com/myluxgoldcollection" bgColor="#c79f33" className="social-icon" style={{width: "2rem", height: "2rem"}} label="Our Facebook" target="_blank" />
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ function Footer() {
       </div>
 
       <div className="copyright-section">
-        <p>&copy; { new Date().getFullYear() } Misan Gold Collection. All rights reserved.</p>
+        <p>&copy; { new Date().getFullYear() } MyLux Gold Collection. All rights reserved.</p>
         
         <div className="bottom-links">
           <a href="/privacy-policy" className="bottom-link">Privacy Policy</a>

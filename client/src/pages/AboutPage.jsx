@@ -17,7 +17,7 @@ function AboutPage() {
 
         <section id="about-page">
             <div className="page-header">
-                <p className="eyebrow">About Misan Gold Collection</p>
+                <p className="eyebrow">About MyLux Gold Collection</p>
                 <h1 id="large-text">Gold buying, selling and custom jewellery with trust at every step.</h1>
                 <p className="page-lead">
                     We help you turn gold into value with clear pricing, expert appraisal and dependable customer service — whether you are selling, buying or creating custom pieces.
@@ -46,7 +46,7 @@ function AboutPage() {
                 <div className="about-card">
                     <h2>Who we are</h2>
                     <p>
-                        Misan Gold Collection is a Delta-based gold house specialising in gold selling, buying and quality handcrafted jewellery.
+                        MyLux Gold Collection is a Lagos-based gold house specialising in gold selling, buying and quality handcrafted jewellery.
                         We combine deep market knowledge with a commitment to clear pricing and friendly, secure service.
                     </p>
                     <p>
@@ -86,7 +86,7 @@ function AboutPage() {
             <div className="about-story">
                 <h2>Why customers choose us</h2>
                 <p>
-                    Customers choose Misan Gold Collection because we make every step simple and transparent.
+                    Customers choose MyLux Gold Collection because we make every step simple and transparent.
                     From immediate gold purchase offers to guided jewellery selections, we are committed to delivering value with respect and reliability.
                 </p>
                 <p>
