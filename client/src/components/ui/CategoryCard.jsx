@@ -1,6 +1,6 @@
 function CategoryCard({ category }) {
     return (
-        <div key={category.id} className="category-card">
+        <div className="category-card">
             <figure>
                 <img src={category.image} alt={`${category.name} Image`} loading="lazy" />
             </figure>

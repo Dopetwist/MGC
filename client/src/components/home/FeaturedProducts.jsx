@@ -23,7 +23,7 @@ function FeaturedProducts({ cart, addToCart, setToast }) {
       id: "GB001",
       name: "Top Tier Gold Bar",
       description: "Quality 24K Gold Bar for great investment.",
-      image: "/images/GB1.PNG",
+      image: "/images/GB1.png",
       purity: "24K",
       category: "Necklaces",
       availability: "In Stock",

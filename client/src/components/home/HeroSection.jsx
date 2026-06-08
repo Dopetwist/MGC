@@ -60,7 +60,7 @@ function HeroSection() {
                         </figure>
 
                         <figure className="gold-image-figure2">
-                          <img src="/images/Pendant1.png" alt="Hero Bottom Image" loading="lazy" />
+                          <img src="/images/hero-gold-bracelet.png" alt="Hero Bottom Image" loading="lazy" />
                         </figure>
                     </div>
 

@@ -16,10 +16,10 @@ function ContactPage() {
 
         <section id="contact-page">
             <div className="page-header">
-                <p className="eyebrow">Contact Misan Gold Collection</p>
+                <p className="eyebrow">Contact MyLux Gold Collection</p>
                 <h1>Reach out for gold selling, buying, custom orders and appraisals.</h1>
                 <p className="page-lead">
-                    Send a message, request a quote or visit our Delta store. <br /> We are ready to help with your gold enquiry.
+                    Send a message, request a quote or visit our Lagos store. <br /> We are ready to help with your gold enquiry.
                 </p>
             </div>
 
@@ -28,17 +28,17 @@ function ContactPage() {
                     <div className="contact-card">
                         <MapPin size={26} className="contact-icon" />
                         <h3>Store location</h3>
-                        <p>Warri, Delta State, Nigeria.</p>
+                        <p>123 Silicon Street, Lagos, Nigeria.</p>
                     </div>
                     <div className="contact-card">
                         <Mail size={26} className="contact-icon" />
                         <h3>Email</h3>
-                        <p><a href="mailto:misandouglas@gmail.com">misandouglas@gmail.com</a></p>
+                        <p><a href="mailto:myluxgoldcollection@gmail.com">myluxgoldcollection@gmail.com</a></p>
                     </div>
                     <div className="contact-card">
                         <Phone size={26} className="contact-icon" />
                         <h3>Phone</h3>
-                        <p><a href="tel:+2349055789610">+234 905 578 9610</a></p>
+                        <p><a href="tel:+2341234567890">+234 123 456 7890</a></p>
                     </div>
                     <div className="contact-card">
                         <Clock size={26} className="contact-icon" />

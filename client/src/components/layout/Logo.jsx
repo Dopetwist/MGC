@@ -11,10 +11,10 @@ function Logo() {
         onClick={() => navigate("/")}
         >
             <figure>
-                <img src="/images/MGC-logo.png" alt="Misan Gold Collection Logo" />
+                <img src="/images/MGC-logo.png" alt="MyLux Gold Collection Logo" />
             </figure>
 
-            <h2><span>Misan</span> Gold Collection</h2>
+            <h2><span>MyLux</span> Gold Collection</h2>
         </div>
     )
 }
