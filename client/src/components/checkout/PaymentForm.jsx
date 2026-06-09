@@ -50,7 +50,7 @@ function PaymentForm({ total, setType, type, formatPrice }) {
           <div className="company-account">
               <p><strong>Account Number:</strong> 0284954839</p>
               <p><strong>Bank:</strong> Polaris Bank</p>
-              <p><strong>Account Name:</strong> Misan Gold Collection </p>
+              <p><strong>Account Name:</strong> Mylux Gold Collection </p>
           </div>
 
           <p className="paid-paragraph">After a successful transfer, click the <strong>"Place Order"</strong> button.</p>
