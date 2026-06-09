@@ -37,13 +37,20 @@ header {
     justify-content: space-between;
 }
 
-#navbar {
+header .header-inner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-#navbar .link {
+.nav-links .link {
     font-size: 0.9rem;
     color: var(--text-color);
     text-transform: uppercase;
@@ -51,11 +58,11 @@ header {
     letter-spacing: 0.05rem;
 }
 
-#navbar .link:hover {
+.nav-links .link:hover {
     cursor: pointer;
 }
 
-#navbar .link.active {
+.nav-links .link.active {
     color: var(--nav-gold);
 }
 
@@ -68,6 +75,15 @@ header {
     margin-left: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
+}
+
+#menu-icon {
+    margin-left: 1rem;
+    display: none;
+}
+
+#menu-icon .inner-icon {
+    color: var(--text-color);
 }
 
 #logo {
@@ -2506,11 +2522,11 @@ button.place-order:hover {
         padding: 1rem 4%;
     }
 
-    #navbar {
+    .nav-links {
         gap: 1rem;
     }
 
-    #navbar .link {
+    .nav-links .link {
         font-size: 0.8rem;
     }
 
@@ -2748,33 +2764,66 @@ button.place-order:hover {
 
     header {
         padding: 0.8rem 3%;
-        flex-direction: column;
-        gap: 0.8rem;
         align-items: center;
     }
 
-    #navbar {
+    .nav-links {
         flex-wrap: wrap;
         gap: 0.5rem;
         justify-content: center;
         width: 100%;
     }
 
-    #navbar .link {
+    .nav-links .link {
         font-size: 0.7rem;
         letter-spacing: 0.02rem;
         padding: 0.3rem 0.5rem;
     }
 
     #nav-right {
-        width: 100%;
+        width: fit-content;
         justify-content: center;
         gap: 0.5rem;
     }
 
     #nav-right .nav-icon {
-        margin-left: 0.5rem;
+        margin-left: 0.3rem;
         font-size: 0.9rem;
+    }
+
+    /* Hamburger menu styles */
+
+    #menu-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .nav-links {
+        background-color: #222;
+        width: 100%;
+        height: 50%;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        box-shadow: 0 0 0.2rem var(--sub-text-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding: 1rem 0.5rem;
+        z-index: 1000;
+        transition: top .3s ease-in-out;
+    }
+
+    .nav-links .link {
+        font-size: 1.1rem;
+        margin: 1rem 5%;
+    }
+
+    .nav-links.show {
+        top: 4.5rem;
     }
 
     #logo {
@@ -3783,33 +3832,65 @@ button.place-order:hover {
     }
 
     header {
-        flex-direction: column;
-        gap: 0.6rem;
         align-items: center;
+        padding: 1rem 3%;
     }
 
-    #navbar {
+    .nav-links {
         flex-wrap: wrap;
         gap: 0.4rem;
         justify-content: center;
         width: 100%;
     }
 
-    #navbar .link {
+    .nav-links .link {
         font-size: 0.65rem;
         letter-spacing: 0.015rem;
         padding: 0.2rem 0.4rem;
     }
 
     #nav-right {
-        width: 100%;
+        width: fit-content;
         justify-content: center;
         gap: 0.4rem;
     }
 
     #nav-right .nav-icon {
-        margin-left: 0.4rem;
+        margin-left: 0.2rem;
         font-size: 0.8rem;
+    }
+
+    #menu-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .nav-links {
+        background-color: #222;
+        width: 100%;
+        height: 50%;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        box-shadow: 0 0 0.2rem var(--sub-text-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding: 1rem 0.5rem;
+        z-index: 1000;
+        transition: top .3s ease-in-out;
+    }
+
+    .nav-links .link {
+        font-size: 1rem;
+        margin: 1rem 5%;
+    }
+
+    .nav-links.show {
+        top: 4.5rem;
     }
 
     #logo {
