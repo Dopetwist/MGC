@@ -1,4 +1,4 @@
-# 💎 GoldLux Jewelry Store
+# 💎 MyLux Gold Collection
 
 A modern luxury e-commerce platform built for showcasing and selling premium gold jewelry online. The website provides a seamless shopping experience with elegant product displays, advanced filtering, secure cart management, and a responsive design optimized for all devices.
 
