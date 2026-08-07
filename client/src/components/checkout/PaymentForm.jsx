@@ -1,6 +1,14 @@
 import { CreditCard, Landmark } from "lucide-react";
 
-function PaymentForm({ total, setType, type, formatPrice }) {
+function PaymentForm({ 
+  total, 
+  setType, 
+  type, 
+  formatPrice,
+  formData,
+  handlePaymentChange,
+  errors
+}) {
 
   return (
 
@@ -29,16 +37,46 @@ function PaymentForm({ total, setType, type, formatPrice }) {
         <form className="card-form">
           <div className="input-box">
               <label htmlFor="card-num">Card Number</label>
-              <input type="number" id="card-num" placeholder="5191 2312 3456 7890" required />
+              <input 
+                type="text"
+                name="cardNumber"
+                id="card-num" 
+                placeholder="5191 2312 3456 7890"
+                value={formData.cardNumber}
+                onChange={handlePaymentChange}
+                maxLength="19"
+                className={errors.cardNumber ? "input-error" : ""}
+              />
+              {errors.cardNumber && <span className="error-message">{errors.cardNumber}</span>}
           </div>
+
           <div className="expiry input-box">
               <label htmlFor="expiry-date">Expiry Date</label>
-              <input type="text" id="expiry-date" placeholder="00/00" required />
+              <input 
+                type="text" 
+                id="expiry-date"
+                name="expiryDate"
+                placeholder="MM/YY"
+                value={formData.expiryDate}
+                onChange={handlePaymentChange}
+                className={errors.expiryDate ? "input-error" : ""}
+              />
+                {errors.expiryDate && <span className="error-message">{errors.expiryDate}</span>}
           </div>
 
           <div className="cvv input-box">
               <label htmlFor="cvv-number">CVV</label>
-              <input type="number" id="cvv-number" placeholder="345" maxLength={3} required />
+              <input 
+                type="number" 
+                id="cvv-number"
+                name="cvv"
+                placeholder="345" 
+                maxLength={3}
+                value={formData.cvv}
+                onChange={handlePaymentChange}
+                className={errors.cvv ? "input-error" : ""}
+              />
+                {errors.cvv && <span className="error-message">{errors.cvv}</span>}
           </div>
         </form>
       )}

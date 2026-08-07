@@ -20,6 +20,19 @@ function App() {
     availability: [],
   });
 
+  const [ formData, setFormData ] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    state: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: ""
+  });
+
   // Save Cart to Local Storage for persistence
   const [ cart, setCart ] = useState(() => {
     try {
@@ -97,8 +110,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
-        <Route path="/checkout" element={<CheckoutPage cart={cart} setCart={setCart} />} />
-        <Route path="/confirmation" element={<OrderConfirmationPage />} />
+        <Route path="/checkout" element={<CheckoutPage cart={cart} setCart={setCart} formData={formData} setFormData={setFormData} />} />
+        <Route path="/confirmation" element={<OrderConfirmationPage formData={formData} />} />
       </Route>
     </Routes>
   );

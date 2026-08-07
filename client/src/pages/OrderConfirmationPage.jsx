@@ -3,6 +3,10 @@ import { useNavigate } from "react-router";
 function OrderConfirmationPage() {
 
   const navigate = useNavigate();
+
+  const formData = localStorage.getItem('mgc-form-data');
+
+  const newFormData = JSON.parse(formData);
     
   return (
 
@@ -16,7 +20,7 @@ function OrderConfirmationPage() {
           </div>
 
           <div className="payment-description">
-            <p id="thank-you-text">Thank you, <strong>Richard</strong> for your Order!</p>
+            <p id="thank-you-text">Thank you, <strong>{newFormData.firstName}</strong> for your Order!</p>
 
             <p className="payment-sub-text">Your order has been received and is being processed. You'll receive a confirmation email shortly.</p>
 
