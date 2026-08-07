@@ -1847,6 +1847,17 @@ button.place-order:hover {
     font-size: 0.9rem;
 }
 
+.input-box input.input-error {
+    border-color: #c60000;
+    box-shadow: 0 0 0 0.15rem rgba(198, 0, 0, 0.15);
+}
+
+.error-message {
+    font-family: var(--inter);
+    font-size: 0.8rem;
+    color: #c60000;
+}
+
 .user-info, .delivery-info, .payment-info {
     background: var(--text-color);
     padding: 2rem;
