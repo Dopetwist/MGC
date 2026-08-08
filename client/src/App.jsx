@@ -12,6 +12,19 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import jewelryCollections from "./data/products";
 import ProductDetailPage from './pages/ProductDetailPage';
 
+const initialFormData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  address: "",
+  city: "",
+  state: "",
+  cardNumber: "",
+  expiryDate: "",
+  cvv: ""
+};
+
 function App() {
 
   const [ filters, setFilters ] = useState({
@@ -20,18 +33,11 @@ function App() {
     availability: [],
   });
 
-  const [ formData, setFormData ] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    address: "",
-    city: "",
-    state: "",
-    cardNumber: "",
-    expiryDate: "",
-    cvv: ""
-  });
+  const [ formData, setFormData ] = useState(initialFormData);
+
+  const resetFormData = () => {
+    setFormData(initialFormData);
+  };
 
   // Save Cart to Local Storage for persistence
   const [ cart, setCart ] = useState(() => {
@@ -110,7 +116,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
-        <Route path="/checkout" element={<CheckoutPage cart={cart} setCart={setCart} formData={formData} setFormData={setFormData} />} />
+        <Route path="/checkout" element={<CheckoutPage cart={cart} setCart={setCart} formData={formData} setFormData={setFormData} resetFormData={resetFormData} />} />
         <Route path="/confirmation" element={<OrderConfirmationPage formData={formData} />} />
       </Route>
     </Routes>

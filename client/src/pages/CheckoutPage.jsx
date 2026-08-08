@@ -8,7 +8,7 @@ import PlaceOrder from "../components/checkout/PlaceOrder";
 import OrderItems from "../components/checkout/OrderItems";
 
 
-function CheckoutPage({ cart, setCart, formData, setFormData }) {
+function CheckoutPage({ cart, setCart, formData, setFormData, resetFormData }) {
 
   const [ type, setType ] = useState("");
 
@@ -78,6 +78,7 @@ function CheckoutPage({ cart, setCart, formData, setFormData }) {
     }
 
     localStorage.setItem('mgc-form-data', JSON.stringify(formData));
+    resetFormData();
     navigate("/confirmation");
     clearCart();
   };
