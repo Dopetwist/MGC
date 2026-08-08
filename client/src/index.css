@@ -1854,7 +1854,7 @@ button.place-order:hover {
 
 .error-message {
     font-family: var(--inter);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #c60000;
 }
 
@@ -4647,6 +4647,10 @@ button.place-order:hover {
         font-size: 0.7rem;
         border-radius: 0.6rem;
         letter-spacing: 0.03rem;
+    }
+
+    .error-message {
+        font-size: 0.6rem;
     }
 
     /* Cart Page */
